@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Container, Row, Col, Image, Card, Carousel } from 'react-bootstrap';
-import Cabecalho from './cabecalho';
+import Cabecalho from '../components/cabecalho';
 import imagem_dx from '../imagens/CicloDX.png';
 const slides = require.context('../imagens/slides', false, /\.(png|JPG|jpe?g|svg)$/);
 

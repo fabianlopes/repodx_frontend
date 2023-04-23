@@ -3,7 +3,7 @@ import axios from 'axios';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Form } from 'react-bootstrap';
 import { Container, Row, Col } from 'react-bootstrap';
-import Cabecalho from './cabecalho';
+import Cabecalho from '../components/cabecalho';
 import { Link } from 'react-router-dom';
 
 function FilteredTable() {
