@@ -1,8 +1,9 @@
 import React from 'react';
-import { Card, ListGroup } from 'react-bootstrap';
+import { Container, Row, Col, ListGroup } from 'react-bootstrap';
+import Cabecalho from '../components/cabecalho';
 import { useParams } from 'react-router-dom';
 import tedax from '../data/TEDXA.json'
-
+import panas from '../imagens/tecnicas/panas.png';
 
 function Tecnica() {
 
@@ -10,21 +11,41 @@ function Tecnica() {
   const tecnica = tedax.filter(Item => Item.ID === id);
   
   return (
-
-    <Card style={{ width: '18rem' }}>
-        <Card.Body>
-            <Card.Title>{tecnica[0].nome}</Card.Title>
-            <Card.Subtitle className="mb-2 text-muted">{tecnica[0].ID}</Card.Subtitle>
-            <Card.Text>
-            {tecnica[0].resumo}
-            </Card.Text>
-            <ListGroup variant="flush">
-            <ListGroup.Item>{tecnica[0].contexto}</ListGroup.Item>
-            <ListGroup.Item>{tecnica[0].utilizacao}</ListGroup.Item>
-            <ListGroup.Item>{tecnica[0].motivo}</ListGroup.Item>
-        </ListGroup>
-        </Card.Body>
-    </Card>
+    <Container fluid >
+        
+        <Row>        
+            <Cabecalho/>
+        </Row>
+        <Row>
+            <Col>
+                <h1>{tecnica[0].nome}</h1>
+                <h2>{tecnica[0].ID}</h2>
+                <h3>Resumo</h3>
+                <p>{tecnica[0].resumo}</p>
+                <h3>Como utilizar</h3>
+                <ListGroup>
+                {tecnica[0].como_utilizar.map((row, index) => {
+                    return (
+                    <ListGroup.Item>{row}</ListGroup.Item>
+                    );
+                })}
+                </ListGroup>
+                <h3>Contexto do artigo exemplo</h3>
+                <p>{tecnica[0].contexto}</p>                
+            </Col>
+            <Col>
+                <h3>Artefato</h3>
+                <img src={panas} alt='imagem'/>
+                <h3>Referências</h3>
+                {tecnica[0].referencia}
+                <h3>Templates</h3>
+            </Col>            
+        </Row>
+        <Row className="bg-dark text-white">            
+                <p>Developer by FL</p>            
+        </Row>  
+       
+    </Container>
     );
 }
 

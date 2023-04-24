@@ -14,7 +14,7 @@ function Cabecalho() {
                     <img src={logo_texto} alt="logo_texto" />
                 </Link>
                 REPOSITÓRIO DE TÉCNICAS DE AVALIAÇÃO DE DX
-            </header>            
+            </header>                        
         </div>          
   );
 }

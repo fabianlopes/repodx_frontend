@@ -15,7 +15,17 @@
 					 ],
   "tempo" : "4",
   "participantes" : "155",
-  "artigo": "Positive affect through interactions in meetings: The role of proactive and supportive statements"
+  "imagem" : "../imagens/tecnicas/panas.png",
+  "artigo" : "Positive affect through interactions in meetings: The role of proactive and supportive statements",
+  "tags" : ["tag04",
+           "tag05",
+           "tag12",
+           "tag13",
+           "tag15",
+           "tag18",
+           "tag22",
+           "tag24"
+          ]
 },
 {  
   "ID": "TEDXA-02",
@@ -33,7 +43,16 @@
 					 ],
   "tempo" : "4",
   "participantes" : "155",
-  "artigo": "Positive affect through interactions in meetings: The role of proactive and supportive statements"
+  "artigo": "Positive affect through interactions in meetings: The role of proactive and supportive statements",
+  "tags" : ["tag04",
+           "tag05",
+           "tag12",
+           "tag13",
+           "tag15",
+           "tag18",
+           "tag22",
+           "tag24"
+          ]
 },
 {  
   "ID": "TEDXA-03",
@@ -51,7 +70,15 @@
 					 ],
   "tempo" : "6",
   "participantes" : "310",
-  "artigo": "Are there any gender differences in students' emotional reactions to programming learning activities"
+  "artigo": "Are there any gender differences in students' emotional reactions to programming learning activities",
+  "tags" : ["tag02",
+           "tag10",
+           "tag13",
+           "tag15",
+           "tag18",
+           "tag22",
+           "tag24"
+          ]
 },
 {  
   "ID": "TEDXA-04",
@@ -68,7 +95,14 @@
 					 ],
   "tempo" : "12",
   "participantes" : "1908",
-  "artigo" : "Consequences of Unhappiness While Developing Software"
+  "artigo" : "Consequences of Unhappiness While Developing Software",
+  "tags" : ["tag01",
+           "tag14",
+           "tag15",
+           "tag19",
+           "tag20",
+           "tag21"
+          ]
 },
 {  
   "ID": "TEDXA-05",
@@ -86,13 +120,21 @@
 					 ],
   "tempo" : "12",
   "participantes" : "1500000",
-  "artigo" : "Facing up the primary emotions in Mobile Software Ecosystems from Developer Experience"
+  "artigo" : "Facing up the primary emotions in Mobile Software Ecosystems from Developer Experience",
+  "tags" : ["tag08",
+           "tag11",
+           "tag14",
+           "tag17",
+           "tag19",
+           "tag20",
+           "tag21"
+          ]
 },
 {  
   "ID": "TEDXA-06",
   "nome": "Questionário Circumflexo de Russel sobre emoções positivas e negativas e sensores biométricos",
   "resumo": "Investigar as emoções e o progresso da DX com o uso de sensores biométricos para prever o progresso dos desenvolvedores de software nas mudanças de tarefas",
-  "metodo": "Questionário",
+  "metodo": "Questionário, Entrevistas",
   "referencia": "J. Russell, “A circumplex model of affect,” Journal of personality and social psychology, vol. 39, no. 6, pp. 1161 1178, 1980, J. Riseberg, J. Klein, R. Fernandez, and R. W. Picard, “Frustrating the user on purpose: Using biosignals in a pilot study to detect the users emotional state,” in Conference Summary on Human Factors in Computing Systems. ACM, 1998, pp. 227 228. [Online]. Available: http://doi.acm.org/10.1145/286498.286715",
   "contexto": "Participaram do experimento 6 desenvolvedores profissionais de software e 11 alunos de doutorado com especialização em informática. Os desenvolvedores profissionais foram recrutados a partir de duas empresas de desenvolvimento de software na Suíça. Os estudantes foram recrutados na Universidade de Zurique. Os participantes foram instruídos a usar os sensores EEG e respondiam questionarios durante a após as suas tarefas",
   "ambiente": "Indústria, Academia",
@@ -105,7 +147,17 @@
 					 ],
   "tempo" : "1",
   "participantes" : "17",
-  "artigo" : "Stuck and Frustrated or In Flow and Happy: Sensing Developers’ Emotions and Progress"
+  "artigo" : "Stuck and Frustrated or In Flow and Happy: Sensing Developers’ Emotions and Progress",
+  "tags" : ["tag01",
+           "tag03",
+           "tag06",
+           "tag07",
+           "tag15",
+           "tag16",
+           "tag18",
+           "tag19",
+           "tag22"
+          ]
 },
 {  
   "ID": "TEDXA-07",
@@ -122,7 +174,18 @@
 					 ],
   "tempo" : "3",
   "participantes" : "2",
-  "artigo" : "How do you feel, developer? An explanatory theory of the impact of affects on programming performance"
+  "artigo" : "How do you feel, developer? An explanatory theory of the impact of affects on programming performance",
+  "tags" : ["tag01",
+           "tag02",
+           "tag06",
+           "tag07",
+           "tag10",
+           "tag13",
+           "tag15",
+           "tag16",
+           "tag19",
+           "tag22"
+          ]
 },
 {  
   "ID": "TEDXA-08",
@@ -139,7 +202,18 @@
 					 ],
   "tempo" : "3",
   "participantes" : "2",
-  "artigo" : "How do you feel, developer? An explanatory theory of the impact of affects on programming performance"
+  "artigo" : "How do you feel, developer? An explanatory theory of the impact of affects on programming performance",
+  "tags" : ["tag01",
+           "tag02",
+           "tag06",
+           "tag07",
+           "tag10",
+           "tag13",
+           "tag15",
+           "tag16",
+           "tag19",
+           "tag22"
+          ]
 },
 {  
   "ID": "TEDXA-09",
@@ -154,7 +228,15 @@
   "como_utilizar" : ["Aplicação do questionário IMI adaptado à afetividade (DX) ao final das atividades executadas na ferramenta"],
   "tempo" : "6",
   "participantes" : "25",
-  "artigo" : "Flow, Intrinsic Motivation, and Developer Experience in Software Engineering"
+  "artigo" : "Flow, Intrinsic Motivation, and Developer Experience in Software Engineering",
+  "tags" : ["tag02",
+           "tag14",
+           "tag15",
+           "tag16",
+           "tag19",
+           "tag20",
+           "tag21"
+          ]
 },
 {  
   "ID": "TEDXA-10",
@@ -163,7 +245,7 @@
   "metodo": "Questionário",
   "referencia": "Lee, Heeyoung, and Younghwan Pan. 'Evaluation of the Nomological Validity of Cognitive, Emotional, and Behavioral Factors for the Measurement of Developer Experience.' Applied Sciences 11.17 (2021): 7805",
   "contexto": "Com apoio de doutores e mestres foi desenvolvido um questionário para avaliar o desenvolvimento em DL. O questionario foi aplicado com 260 participantes em duas indústrias da Corea do Sul, de forma online, durante 2 meses",
-  "ambiente": "Indústria e Academia",
+  "ambiente": "Indústria",
   "utilizacao": "Desenvolvimento de aplicações DL",
   "motivo": "Foi produzido utilizando um plano Delphi com experts (profissionais, mestres e doutores) que avaliaram as questões e definiram um índice de validação de conteúdo (Content Validity Ratio - CVR) a ser aplicado nas respostas",
   "como_utilizar" : [ "Aplicação de forma online aos particpante",
@@ -171,6 +253,17 @@
 					],
   "tempo" : "2",
   "participantes" : "260",
-  "artigo" : "Evaluation of the Nomological Validity of Cognitive, Emotional, and Behavioral Factors for the Measurement of Developer Experience"
+  "artigo" : "Evaluation of the Nomological Validity of Cognitive, Emotional, and Behavioral Factors for the Measurement of Developer Experience",
+  "tags" : ["tag01",
+           "tag02",
+           "tag06",
+           "tag07",
+           "tag09",
+           "tag14",
+           "tag15",
+           "tag19",
+           "tag20",
+           "tag21"
+          ]
 }
 ]
