@@ -30,7 +30,7 @@ function DX() {
                 <Card.Text>
                     <Carousel>        
                         {slides.keys().map((slide) => (
-                        <Carousel.Item key={slide.id}><img key={slide} src={slides(slide)} alt="" /></Carousel.Item>
+                        <Carousel.Item key={slide.id}><img className='imagem-dxinfo' key={slide} src={slides(slide)} alt="" /></Carousel.Item>
                         ))}
                     </Carousel>      
                 </Card.Text>          

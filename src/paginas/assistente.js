@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import tedxa from '../data/TEDXA.json';
 import TabelaSearch from '../components/tabelapesquisa';
 
-function FilteredTable() {
+function Assistente() {
   
   const [formData, setFormData] = useState([]);
   const [showModal, setShowModal] = useState(false);
@@ -48,9 +48,6 @@ function FilteredTable() {
     })
 
     setTabelaFiltro(tecnicasFiltro);
-
-    console.log(tecnicasFiltro);
-    console.log(tedxa);
     setShowModal(true);
   }
 
@@ -192,4 +189,4 @@ function FilteredTable() {
   );
 }
 
-export default FilteredTable;
+export default Assistente;
