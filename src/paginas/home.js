@@ -28,6 +28,7 @@ function Home() {
           activeIndex={activeIndex}
           onSelect={(index) => setActiveIndex(index)}
           controls={false}
+          slide={false}
         >
           <Carousel.Item onSlideEnter={() => handleSlideEnter(0)}>
             <div className="card carousel-box">
