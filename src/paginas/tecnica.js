@@ -21,6 +21,8 @@ function Tecnica() {
             <Col xs={6}>
                 <h3 className="pb-2 border-bottom border-top" style={{boxShadow: "inset 0 -8px 8px -8px rgba(0, 0, 0, 0.5)"}}>Resumo</h3>
                 <p>{tecnica[0].resumo}</p>
+                <h3 className="pb-2 border-bottom border-top" style={{boxShadow: "inset 0 -8px 8px -8px rgba(0, 0, 0, 0.5)"}}>Porque utilizar</h3>
+                <p>{tecnica[0].motivo}</p>
                 <h3 className="pb-2 border-bottom border-top" style={{boxShadow: "inset 0 -8px 8px -8px rgba(0, 0, 0, 0.5)"}}>Como utilizar</h3>
                 <ListGroup>
                 {tecnica[0].como_utilizar.map((row, index) => {
