@@ -14,7 +14,7 @@ function ListaTecnicas() {
       <Row>        
         <Cabecalho />
       </Row>
-      <Row>            
+      <Row >            
         <TabelaSearch data={tedxa}/>
       </Row>      
       <Row className="bg-dark text-white">            

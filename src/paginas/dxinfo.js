@@ -22,9 +22,15 @@ function DX() {
             <Card.Body>
                 <Card.Title></Card.Title>
                 <Card.Text>
-                    <Carousel>        
+                    <Carousel>
                         {slides.keys().map((slide) => (
-                        <Carousel.Item key={slide.id}><img className='imagem-dxinfo' key={slide} src={slides(slide)} alt="" /></Carousel.Item>
+                        <Carousel.Item key={slide.id}>                           
+                          <div className="card dxinfo-box">
+                            <div className="card-body">
+                              <img className='imagem-dxinfo' key={slide} src={slides(slide)} alt="" />
+                            </div>
+                          </div>
+                        </Carousel.Item>
                         ))}
                     </Carousel>      
                 </Card.Text>          
