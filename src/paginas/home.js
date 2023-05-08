@@ -61,7 +61,7 @@ function Home() {
           </Carousel.Item>
         </Carousel>
         </div>
-        <Link to="/assistente">
+        <Link to="/robodex">
           <img
             src={imagem_assistente}
             alt="assistente"

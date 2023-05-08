@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Container, Row, Col, Form, Modal, Button } from 'react-bootstrap';
+import { Container, Row, Col, Form } from 'react-bootstrap';
 import Cabecalho from '../components/cabecalho';
 import { Link } from 'react-router-dom';
 import tedxa from '../data/TEDXA.json';
@@ -8,50 +8,24 @@ import TabelaSearch from '../components/tabelapesquisa';
 function Assistente() {
   
   const [formData, setFormData] = useState([]);
-  const [showModal, setShowModal] = useState(false);
   const [tabelaFiltro, setTabelaFiltro] = useState([]);
-  const tecnicas = tedxa;
-  var tecnicasFiltro = tecnicas;
+  const tecnicas = tedxa;  
 
-  useEffect(() => {
-
-    tecnicasFiltro = [];
-    setTabelaFiltro(tecnicasFiltro);
-
-  }, [formData]);
-  
-  function handleChange(event) {
-    if (event.target.checked) {
-      setFormData({
-        ...formData,
-        [event.target.name]: event.target.value      
-      });
-      console.log('aqui');
-    }
-    
-  }
-
-  const handleSubmit = (event) => {
-    event.preventDefault();
-
+  useEffect(() => {    
     const checkboxValue = Object.keys(formData).filter(value => formData[value]);
-    tecnicasFiltro = [];
-
-    tecnicas.forEach(tecnica => {
-      tecnica.tags.forEach(tags => {
-        checkboxValue.forEach(tagform => {
-          if (tagform === tags) {
-            tecnicasFiltro.push(tecnica);
-          }
-        })
-      })
-    })
-
+    const tecnicasFiltro = tecnicas.filter(tecnica => {
+      return tecnica.tags.some(tag => checkboxValue.includes(tag));
+    });
     setTabelaFiltro(tecnicasFiltro);
-    setShowModal(true);
-  }
-
-  const handleClose = () => setShowModal(false);
+  }, [formData, tecnicas]);
+  
+  function handleChange(event) {    
+    setFormData({
+      ...formData,
+      [event.target.name]: event.target.checked      
+    });   
+    
+  }  
 
   return (
 
@@ -68,77 +42,52 @@ function Assistente() {
                 Aqui precisamos saber informa&ccedil;&otilde;es para poder auxiliar melhor na sele&ccedil;&atilde;o da t&eacute;cnica de avalia&ccedil;&atilde;o de DX<br/>
                 Não conhece as definições da DX? clique <Link to='/dxinfo'>AQUI</Link> para maiores informações
             </div>
-            <Form onSubmit={handleSubmit}>
+            <Form>
               <Row>
-              <Col xs='6'>
+              <Col xs='8'>
                 <div className="form-check shadow bg-light border-primary">
                 <label>                  
-                  Avaliando um processo de desenvolvimento de software?<br/>                    
+                  O que você quer avaliar?<br/>
                 </label>            
                 <Form.Group>                
-                    <Form.Check inline type="checkbox" label="Desenvolvimento (durante)" name='tag01' value="tag01" onChange={handleChange} />
-                    <Form.Check inline type="checkbox" label="Desenvolvimento (após)" name='tag02' value="tag02" onChange={handleChange} />
-                    <Form.Check inline type="checkbox" label="Mudança de atividade/Tarefa" name='tag03' value="tag03" onChange={handleChange} />
-                    <Form.Check inline type="checkbox" label="Análise de Requisitos" value="tag04" onChange={handleChange} />
-                    <Form.Check inline type="checkbox" label="Aprendizado de tecnologia" value="tag24" onChange={handleChange} />
+                    <Form.Check inline type="checkbox" label="Emoções e humor durante o desenvolvimento de software" name='tag01' value="tag01" onChange={handleChange} />
+                    <Form.Check inline type="checkbox" label="Emoções e humor após o desenvolvimento de software" name='tag02' value="tag02" onChange={handleChange} />
+                    <Form.Check inline type="checkbox" label="Mudanças de atividade/Tarefa" name='tag03' value="tag03" onChange={handleChange} />
+                    <Form.Check inline type="checkbox" label="Análise de Requisitos" name='tag04' value="tag04" onChange={handleChange} />
+                    <Form.Check inline type="checkbox" label="Aprendizado de tecnologia" name='tag24' value="tag24" onChange={handleChange} />
+                    <Form.Check inline type="checkbox" label="O estado afetivo dos participantes (positivos ou negativos)" name='tag25' value="tag25" onChange={handleChange} />
+                    <Form.Check inline type="checkbox" label="A felicidade dos participantes no processo de desenvolvimento de software" name='tag26' value="tag26" onChange={handleChange} />
+                    <Form.Check inline type="checkbox" label="Bases de textos/emails (JSON, XML, EML, TXT)" name='tag11' value="tag11" onChange={handleChange} />
+                    <Form.Check inline type="checkbox" label="Dimensões afetivas (valência, excitação e dominância)" name='tag27' value="tag27" onChange={handleChange} />
+                    <Form.Check inline type="checkbox" label="Eventos afetivos (elogios, satisfação, perdas, acidentes, ambientes hostis etc)" name='tag28' value="tag28" onChange={handleChange} />
+                    <Form.Check inline type="checkbox" label="Profundidade, foco, concentração e agradabilidade" name='tag29' value="tag29" onChange={handleChange} />
+                    <Form.Check inline type="checkbox" label="Uma ferramenta, tecnologia ou metodologia" name='tag30' value="tag30" onChange={handleChange} />
                 </Form.Group>
                 </div>
                 <div className="form-check shadow bg-light border-primary">
                 <label>
-                  Qual a característica da avaliação a ser realizada? <br/>
+                  Em que momento você quer avaliar? <br/>
                 </label>
                 <Form.Group>
-                    <Form.Check inline type="checkbox" label="Reunião" value="tag05" onChange={handleChange} />
-                    <Form.Check inline type="checkbox" label="Muitas intervenções/estímulos" value="tag06" onChange={handleChange} />
-                    <Form.Check inline type="checkbox" label="Muitas alterações de atividades/tarefas" value="tag07" onChange={handleChange} />
-                    <Form.Check inline type="checkbox" label="MOBILE" value="tag08" onChange={handleChange} />
-                    <Form.Check inline type="checkbox" label="Deep Learnig (DL)" value="tag09" onChange={handleChange} />
-                    <Form.Check inline type="checkbox" label="Autoavaliação" value="tag10" onChange={handleChange} />
-                    <Form.Check inline type="checkbox" label="Base de textos (emails, perguntas e respostas)" value="tag11" onChange={handleChange} />
-                    <Form.Check inline type="checkbox" label="Áudios/gravações" value="tag12" onChange={handleChange} />
+                    <Form.Check inline type="checkbox" label="Reuniôes" name='tag05' value="tag05" onChange={handleChange} />
+                    <Form.Check inline type="checkbox" label="Atividades com muitas intervenções/estímulos" name='tag06' value="tag06" onChange={handleChange} />
+                    <Form.Check inline type="checkbox" label="Atividades com muitas alterações de atividades/tarefas" name='tag07' value="tag07" onChange={handleChange} />
+                    <Form.Check inline type="checkbox" label="Ao usar tecnologia MOBILE" name='tag08' value="tag08" onChange={handleChange} />
+                    <Form.Check inline type="checkbox" label="Ao usar Deep Learnig (DL)" name='tag09' value="tag09" onChange={handleChange} />
+                    
                 </Form.Group>
                 </div>
                 <div className="form-check shadow bg-light border-primary">
                 <label>
-                    Qual o ambiente da avaliação de DX? <br/>                    
+                  Como você vai ralizar a avaliação? <br/>
                 </label>
                 <Form.Group>
-                    <Form.Check inline type="checkbox" label="Academia" value="tag13" onChange={handleChange} />
-                    <Form.Check inline type="checkbox" label="Indústria" value="tag14" onChange={handleChange} />
-                </Form.Group>
-                </div>
-                <div className="form-check shadow bg-light border-primary">
-                <label>
-                    Qual o método que voce deseja utilizar para avaliação de DX? <br></br>
-                    (Frameworks podem conter artefatos, questionários e entrevistas em conjunto)
-                </label>
-                <Form.Group>
-                    <Form.Check inline type="checkbox" label="Questionário" value="tag15" onChange={handleChange} />
-                    <Form.Check inline type="checkbox" label="Entrevista" value="tag16" onChange={handleChange} />
-                    <Form.Check inline type="checkbox" label="Mineração" value="tag17" onChange={handleChange} />
-                </Form.Group>
-                </div>            
-                </Col>
-                <Col xs='6'>
-                <div className="form-check shadow bg-light border-primary">
-                <label>
-                    Qual o nível de experiência dos participantes da avaliação de DX? <br></br>
-                    (Os níveis são distribuídos da seguinte forma: 1 a 3 anos, iniciante; 3 a 5 anos, experiente; acima de 5 anos, especialista)
-                </label>
-                <Form.Group>
-                    <Form.Check inline type="checkbox" label="Especialista" value="tag20" onChange={handleChange} />
-                    <Form.Check inline type="checkbox" label="Experiente" value="tag19" onChange={handleChange} />
-                    <Form.Check inline type="checkbox" label="Iniciante" value="tag18" onChange={handleChange} />
-                </Form.Group>
-                </div>
-                <div className="form-check shadow bg-light border-primary">
-                <label>
-                    Voce conhece o ambiente onde será realizada a avaliação?                
-                </label>
-                <Form.Group>
-                    <Form.Check inline type="radio" label="Remoto" value="tag21" onChange={handleChange} />
-                    <Form.Check inline type="radio" label="Presencial" value="tag22" onChange={handleChange} />
-                    <Form.Check inline type="radio" label="Hibrido" value="tag23" onChange={handleChange} />
+                    <Form.Check inline type="checkbox" label="Usando autoavaliações pelos próprios participantes" name='tag10' value="tag10" onChange={handleChange} />
+                    <Form.Check inline type="checkbox" label="Utilizando base de textos (emails, sites de perguntas e respostas)" name='tag11' value="tag11" onChange={handleChange} />
+                    <Form.Check inline type="checkbox" label="Transcrições de áudios/gravações" name='tag12' value="tag12" onChange={handleChange} />
+                    <Form.Check inline type="checkbox" label="Usando questionário" name='tag15' value="tag15" onChange={handleChange} />
+                    <Form.Check inline type="checkbox" label="Usando entrevista" name='tag16' value="tag16" onChange={handleChange} />
+                    <Form.Check inline type="checkbox" label="Usando mineração de dados" name='tag17' value="tag17" onChange={handleChange} />
                 </Form.Group>
                 </div>
                 <div className="form-check shadow bg-light border-primary">
@@ -155,35 +104,53 @@ function Assistente() {
                 </div>
                 <div className="form-check shadow bg-light border-primary">
                 <label>
-                    Qual o tempo para utilização da técnica (meses)?
+                    Qual o nível de experiência profissional dos participantes da avaliação de DX que será realizada? <br></br>
+                    (Os níveis são distribuídos da seguinte forma: 1 a 3 anos, iniciante; 3 a 5 anos, experiente; acima de 5 anos, especialista)
                 </label>
                 <Form.Group>
-                    <Form.Check inline type="radio" label="1 - 3" value="3" onChange={handleChange} />
-                    <Form.Check inline type="radio" label="4 - 6" value="6" onChange={handleChange} />
-                    <Form.Check inline type="radio" label="6 - 12" value="12" onChange={handleChange} />
-                    <Form.Check inline type="radio" label="acima de 12" value="13" onChange={handleChange} />
+                    <Form.Check inline type="checkbox" name='tag20' label="Especialista" value="tag20" onChange={handleChange} />
+                    <Form.Check inline type="checkbox" name='tag19' label="Experiente" value="tag19" onChange={handleChange} />
+                    <Form.Check inline type="checkbox" name='tag18' label="Iniciante" value="tag18" onChange={handleChange} />
+                </Form.Group>
+                </div>
+                <div className="form-check shadow bg-light border-primary">
+                <label>
+                    A avaliação de DX vai ser realizada de que forma?
+                </label>
+                <Form.Group>
+                    <Form.Check inline type="radio" label="Remotamente" name='tagr1' value="tag21" onChange={handleChange} />
+                    <Form.Check inline type="radio" label="Presencial" name='tagr1' value="tag22" onChange={handleChange} />
+                    <Form.Check inline type="radio" label="Hibrida" name='tagr1' value="tag23" onChange={handleChange} />
+                </Form.Group>
+                </div>
+                <div className="form-check shadow bg-light border-primary">
+                <label>
+                    Qual o ambiente da avaliação? <br/>
+                </label>
+                <Form.Group>
+                    <Form.Check inline type="checkbox" label="Academia" name='tag13' value="tag13" onChange={handleChange} />
+                    <Form.Check inline type="checkbox" label="Indústria" name='tag14' value="tag14" onChange={handleChange} />
                 </Form.Group>
                 </div>                
-                <Button type='submmit'>Enviar</Button>                
+                <div className="form-check shadow bg-light border-primary">
+                <label>
+                    Qual o tempo disponível aproximado para utilização da técnica de avaliação de DX (em minutos)?
+                </label>
+                <Form.Group>
+                    <Form.Check inline type="radio" label="1 - 3" name='tagr2' value="3" onChange={handleChange} />
+                    <Form.Check inline type="radio" label="4 - 6" name='tagr2' value="6" onChange={handleChange} />
+                    <Form.Check inline type="radio" label="6 - 12" name='tagr2' value="12" onChange={handleChange} />
+                    <Form.Check inline type="radio" label="acima de 12" name='tagr2' value="13" onChange={handleChange} />
+                </Form.Group>
+                </div>                
+                </Col>
+                <Col xs='4'>
+                  <TabelaSearch data={tabelaFiltro}/>
               </Col>
               </Row>
             </Form>
           </div>        
       </Row>
-
-      <Modal show={showModal} onHide={handleClose}>
-        <Modal.Header closeButton>
-          <Modal.Title>Técnicas Sugeridas</Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
-          <TabelaSearch data={tabelaFiltro}/>
-        </Modal.Body>
-        <Modal.Footer>
-          <Button variant="secondary" onClick={handleClose}>
-            Fechar
-          </Button>
-        </Modal.Footer>
-      </Modal>
 
     </Container>
   );

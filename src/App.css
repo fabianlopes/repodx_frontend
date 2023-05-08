@@ -292,3 +292,18 @@ input[type="radio"] {
 .home .carousel {
   opacity: 1; /* Remova a opacidade do carrossel */
 }
+
+Tabs, h2 {
+  font-size: 4rem;
+  font-family: fantasy; 
+}
+
+Tabs, p {
+  font-size: 2rem;
+  font-family: fantasy; 
+}
+
+Tabs, label {
+  font-size: 1rem;
+  font-family: fantasy; 
+}

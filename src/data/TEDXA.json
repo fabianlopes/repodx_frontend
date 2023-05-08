@@ -275,7 +275,7 @@
   "contexto": "Com apoio de doutores e mestres foi desenvolvido um questionário para avaliar o desenvolvimento em DL. O questionario foi aplicado com 260 participantes em duas indústrias da Corea do Sul, de forma online, durante 2 meses",
   "ambiente": "Indústria",
   "utilizacao": "Desenvolvimento de aplicações DL",
-  "motivo": "Foi produzido utilizando um plano Delphi com experts (profissionais, mestres e doutores) que avaliaram as questões e definiram um índice de validação de conteúdo (Content Validity Ratio - CVR) a ser aplicado nas respostas",
+  "motivo": "Foi utilizado para avaliar DX em um ambiente com a metodologia Deep Learning (DL)",
   "como_utilizar" : [ "Aplicação de forma online aos particpante",
 					            "A avaliação é obtida através da média dos CVR mensurados - 0.799 em cada questão"
 					],
