@@ -1,9 +1,6 @@
-import React, { useState } from 'react';
-import { Container, Row, Col } from 'react-bootstrap';
-import imagem_dx from '../imagens/CicloDX.png';
-import imagem_assistente from '../imagens/assistente.png'
+import React from 'react';
+import { Container, Row } from 'react-bootstrap';
 import Cabecalho from '../components/cabecalho';
-import { Link } from 'react-router-dom';
 import TabelaSearch from '../components/tabelapesquisa';
 import tedxa from '../data/TEDXA.json'
 

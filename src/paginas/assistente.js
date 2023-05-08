@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Container, Row, Col, Form, Modal, Button, Table } from 'react-bootstrap';
+import { Container, Row, Col, Form, Modal, Button } from 'react-bootstrap';
 import Cabecalho from '../components/cabecalho';
 import { Link } from 'react-router-dom';
 import tedxa from '../data/TEDXA.json';

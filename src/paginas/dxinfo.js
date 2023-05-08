@@ -1,17 +1,11 @@
-import React, { useState } from 'react';
-import { Container, Row, Col, Image, Card, Carousel } from 'react-bootstrap';
+import React from 'react';
+import { Container, Row, Col, Card, Carousel } from 'react-bootstrap';
 import Cabecalho from '../components/cabecalho';
-import imagem_dx from '../imagens/CicloDX.png';
 const slides = require.context('../imagens/slides', false, /\.(png|JPG|jpe?g|svg)$/);
 
 
 function DX() {  
-
-    const [texto, setTexto] = useState('Texto original');
-  
-    const handleClick = () => {
-        setTexto(texto);
-        }
+    
   
   return (
 

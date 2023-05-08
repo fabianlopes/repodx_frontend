@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Container, Table, Image } from 'react-bootstrap';
+import { Table } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
 function TabelaSearch({ data }) {

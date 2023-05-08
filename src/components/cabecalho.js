@@ -1,7 +1,6 @@
 import React from 'react';
-import { Container, Row, Nav, Navbar } from 'react-bootstrap';
-import logo_imagem from '../imagens/logo_imagem.png'
-import logo_texto from '../imagens/logo_texto.png'
+import { Container, Nav, Navbar } from 'react-bootstrap';
+import logo_imagem from '../imagens/logo_imagem.png';
 import { Link } from 'react-router-dom';
 
 function Cabecalho() {

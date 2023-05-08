@@ -1,6 +1,5 @@
 import React from 'react';
-import { Container, Row, Col, Carousel  } from 'react-bootstrap';
-import imagem_dx from '../imagens/CicloDX.png';
+import { Container, Row, Carousel  } from 'react-bootstrap';
 import imagem_assistente from '../imagens/assistente.png'
 import Cabecalho from '../components/cabecalho';
 import { Link } from 'react-router-dom';
