@@ -298,17 +298,44 @@ input[type="radio"] {
   text-align: center;
 }
 
-.wizzard {
-    
-    opacity: 1;
-    border: 2xp solid;
-    border-radius: 10px;
-    box-shadow: 10px 10px 5px #888;
-    font-family: monospace;
-    text-align: center;
-    height: "100vh";
-    width: "100%";
-    display: "flex";
-    justify-content: "center";
-    align-items: "center"
+
+.robodex {
+  background-color: #ffffff; /* Defina a cor de fundo que desejar */
+  background-image: url('./imagens/CicloDX.png');
+  height: 100vh; /* altura igual à altura da tela */
+  width: 100%; /* largura igual à largura da tela */
+  background-repeat: repeat;
+  background-size: 15% auto;
+  overflow: hidden;
+}
+
+.robodex::before {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(133, 143, 231, 0.5); /* Defina a cor de fundo com a transparência desejada */
+}
+
+.robodex .carousel {
+  opacity: 1;
+  border: 2xp solid;
+  border-radius: 10px;
+  box-shadow: 10px 10px 5px #888;
+  font-family: monospace;
+  text-align: center;
+  height: 700px;
+  background-color: #ffffff;
+}
+
+.robodex .carousel-box .card-body {
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: #ffffff;
+
 }
