@@ -19,9 +19,9 @@ function Cabecalho() {
                         <Navbar.Brand href="#home">RepoDX</Navbar.Brand>
                         <Nav className="me-auto">
                             <Nav.Link href="/">Home</Nav.Link>
-                            <Nav.Link href="/listatecnicas">Técnicas</Nav.Link>
+                            <Nav.Link href="/listatecnicas">Técnicas</Nav.Link>                            
+                            <Nav.Link href="/assistente">Filtro de técnicas</Nav.Link>
                             <Nav.Link href="/dxinfo">Sobre a DX</Nav.Link>
-                            <Nav.Link href="/assistente">Assistente RoboDX</Nav.Link>
                         </Nav>
                     </Container>
                 

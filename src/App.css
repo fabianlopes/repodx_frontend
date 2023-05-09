@@ -290,15 +290,25 @@ input[type="radio"] {
 }
 
 .home .carousel {
-  opacity: 1; /* Remova a opacidade do carrossel */
+  opacity: 1;
+  border: 2xp solid;
+  border-radius: 10px;
+  box-shadow: 10px 10px 5px #888;
+  font-family: monospace;
+  text-align: center;
 }
 
-Tabs, h2 {
-  font-size: 4rem;
-  font-family: fantasy; 
-}
-
-Tabs, p {
-  font-size: 2rem;
-  font-family: fantasy; 
+.wizzard {
+    
+    opacity: 1;
+    border: 2xp solid;
+    border-radius: 10px;
+    box-shadow: 10px 10px 5px #888;
+    font-family: monospace;
+    text-align: center;
+    height: "100vh";
+    width: "100%";
+    display: "flex";
+    justify-content: "center";
+    align-items: "center"
 }

@@ -64,18 +64,18 @@ function RoboDex() {
       <Row>
           <Cabecalho />        
       </Row>
-      <Row className="d-flex justify-content-center align-items-center vh-50">
-        <Form >
+      <Row>
+        <Form>
           <Tabs centered activeKey={activeTab} onSelect={(key) => setActiveTab(key)}>
-            <Tab eventKey={0} title="Step 1">
-              <div className="shadow bg-light border-primary text-center">
-                  <h2>O que precisamos saber</h2>    
+            <Tab transition={false} eventKey={0} title="Step 1">
+              
+                  <h1>O que precisamos saber</h1>
                   <p>Aqui precisamos saber informa&ccedil;&otilde;es para poder auxiliar melhor na sele&ccedil;&atilde;o da t&eacute;cnica de avalia&ccedil;&atilde;o de DX</p>
                   Não conhece as definições da DX? clique <Link to='/dxinfo'>AQUI</Link> para maiores informações
-              </div>              
+                            
             </Tab>
             <Tab eventKey={1} title="Step 2">
-              <div className="form-check shadow bg-light border-primary">
+              
               <label>                  
                 <h2>O que você quer avaliar?</h2>
               </label>            
@@ -93,10 +93,10 @@ function RoboDex() {
                   <Form.Check inline type="checkbox" label="Profundidade, foco, concentração e agradabilidade" name='tag29' value="tag29" onChange={handleChange} />
                   <Form.Check inline type="checkbox" label="Uma ferramenta, tecnologia ou metodologia" name='tag30' value="tag30" onChange={handleChange} />
               </Form.Group>
-              </div>              
+                            
             </Tab>
             <Tab eventKey={2} title="Step 3">
-              <div className="form-check shadow bg-light border-primary">
+              
               <label>
                 <h2>Em que momento você quer avaliar?</h2>
               </label>
@@ -108,11 +108,11 @@ function RoboDex() {
                   <Form.Check inline type="checkbox" label="Ao usar Deep Learnig (DL)" name='tag09' value="tag09" onChange={handleChange} />
                   
               </Form.Group>
-              </div>
+              
               
             </Tab>
             <Tab eventKey={3} title="Step 4">
-              <div className="form-check shadow bg-light border-primary">
+              
               <label>
               <h2>Como você vai ralizar a avaliação? </h2>
               </label>
@@ -124,11 +124,11 @@ function RoboDex() {
                   <Form.Check inline type="checkbox" label="Usando entrevista" name='tag16' value="tag16" onChange={handleChange} />
                   <Form.Check inline type="checkbox" label="Usando mineração de dados" name='tag17' value="tag17" onChange={handleChange} />
               </Form.Group>
-              </div>
+              
               
             </Tab>
             <Tab eventKey={4} title="Step 5">
-              <div className="form-check shadow bg-light border-primary">
+              
               <label>
                   <h2>Qual o número de participantes da avaliação de DX?</h2>
                   (pode ser respondido com o número provável de colaboradores da organização)
@@ -139,11 +139,11 @@ function RoboDex() {
                   <Form.Check inline type="radio" label="101 - 1000" value="1000" onChange={handleChange} />
                   <Form.Check inline type="radio" label="acima de 1000" value="1001" onChange={handleChange} />
               </Form.Group>
-              </div>
+              
               
             </Tab>
             <Tab eventKey={5} title="Step 6">
-              <div className="form-check shadow bg-light border-primary">
+              
               <label>
                   <h2>Qual o nível de experiência profissional dos participantes da avaliação de DX que será realizada?</h2>
                   (Os níveis são distribuídos da seguinte forma: 1 a 3 anos, iniciante; 3 a 5 anos, experiente; acima de 5 anos, especialista)
@@ -153,11 +153,11 @@ function RoboDex() {
                   <Form.Check inline type="checkbox" name='tag19' label="Experiente" value="tag19" onChange={handleChange} />
                   <Form.Check inline type="checkbox" name='tag18' label="Iniciante" value="tag18" onChange={handleChange} />
               </Form.Group>
-              </div>
+              
               
             </Tab>
             <Tab eventKey={6} title="Step 7">
-              <div className="form-check shadow bg-light border-primary">
+              
               <label>
                   <h2>A avaliação de DX vai ser realizada de que forma?</h2>
               </label>
@@ -166,11 +166,11 @@ function RoboDex() {
                   <Form.Check inline type="radio" label="Presencial" name='tagr1' value="tag22" onChange={handleChange} />
                   <Form.Check inline type="radio" label="Hibrida" name='tagr1' value="tag23" onChange={handleChange} />
               </Form.Group>
-              </div>
+              
               
             </Tab>
             <Tab eventKey={7} title="Step 8">
-              <div className="form-check shadow bg-light border-primary">
+              
               <label>
                   <h2>Qual o ambiente da avaliação?</h2>
               </label>
@@ -178,11 +178,11 @@ function RoboDex() {
                   <Form.Check inline type="checkbox" label="Academia" name='tag13' value="tag13" onChange={handleChange} />
                   <Form.Check inline type="checkbox" label="Indústria" name='tag14' value="tag14" onChange={handleChange} />
               </Form.Group>
-              </div>
+              
               
             </Tab>
             <Tab eventKey={8} title="Step 9">
-              <div className="form-check shadow bg-light border-primary">
+              
               <label>
                   <h2>Qual o tempo disponível aproximado para utilização da técnica de avaliação de DX (em minutos)?</h2>
               </label>
@@ -192,7 +192,7 @@ function RoboDex() {
                   <Form.Check inline type="radio" label="6 - 12" name='tagr2' value="12" onChange={handleChange} />
                   <Form.Check inline type="radio" label="acima de 12" name='tagr2' value="13" onChange={handleChange} />
               </Form.Group>
-              </div>
+              
               
             </Tab>
             

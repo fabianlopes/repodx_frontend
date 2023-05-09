@@ -33,15 +33,24 @@ function Home() {
           <Carousel.Item onSlideEnter={() => handleSlideEnter(0)}>
             <div className="card carousel-box">
               <div className="card-body">
-                <h2>Está precisando avaliar os aspectos afetivos da sua equipe?</h2>
-                Avaliação do humor, dos sentimentos e emoções dos membros de seu time? O RepodDX pode lhe ajudar!
-                O RepoDX, repositório de técnicas de DX é uma ferramenta que vai lhe auxiliar nas SELEÇÃO de técnicas de DX e COMO utilizar a técnica escolhida de forma adequada,
-                utilizando de artigos de exemplo para guiar sua escolha e seu uso.            
+                <h1>Está precisando avaliar os aspectos afetivos da sua equipe?</h1>
+                <p>Avaliação do humor, dos sentimentos e emoções dos membros de seu time? O RepodDX pode lhe ajudar!</p>
                 <p>Quer saber mais? clique <Link to="/assistente">AQUI!</Link> </p>
               </div>
             </div>
           </Carousel.Item>
           <Carousel.Item onSlideEnter={() => handleSlideEnter(1)}>
+            <div className="card carousel-box">
+              <div className="card-body">
+                <h1>O RepoDX</h1>
+                <h2>Repositório de técnicas de DX</h2>
+                <p>Uma ferramenta que vai lhe auxiliar nas SELEÇÃO de técnicas de DX e COMO utilizar a técnica escolhida!</p>
+                <p>Utilize artigos de exemplo para guiar sua escolha e seu uso</p>
+                <p>Quer saber mais? clique <Link to="/assistente">AQUI!</Link> </p>
+              </div>
+            </div>
+          </Carousel.Item>
+          <Carousel.Item onSlideEnter={() => handleSlideEnter(2)}>
             <div className="card carousel-box">
               <div className="card-body">
                 <h1>Conhece a DX? Deixa eu te apresentar...</h1>
@@ -50,10 +59,10 @@ function Home() {
               </div>
             </div>
           </Carousel.Item>
-          <Carousel.Item onSlideEnter={() => handleSlideEnter(2)}>
+          <Carousel.Item onSlideEnter={() => handleSlideEnter(3)}>
             <div className="card carousel-box">
               <div className="card-body">
-                <h1>Já conhece a DX e o RepoDX? Então venha!</h1>
+                <h1>Já conhece a DX e o RepoDX?</h1><h1>Então venha!</h1>
                 <p>Aqui você encontra as técnicas de forma mais rápida, pesquisando pelos termos de seu interesse!</p>
                 <p>Quer saber mais? clique <Link to="/listatecnicas">AQUI!</Link> </p>
               </div>
