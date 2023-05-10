@@ -327,7 +327,7 @@ input[type="radio"] {
   box-shadow: 10px 10px 5px #888;
   font-family: monospace;
   text-align: center;
-  height: 700px;
+  height: 500px;
   background-color: #ffffff;
 }
 
@@ -339,3 +339,16 @@ input[type="radio"] {
   background-color: #ffffff;
 
 }
+
+
+/* Estilo personalizado para todos os ToggleButtonGroup */
+.botoes {
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 700px;
+  margin: 0 auto;
+  
+}
+

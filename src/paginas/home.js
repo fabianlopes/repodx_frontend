@@ -77,6 +77,13 @@ function Home() {
             className="img-fluid imagem-sobreposta"
           />
         </Link>
+        <Link to='/robodex'>
+          <img
+            src={imagem_assistente}
+            alt="assistente"
+            className="img-fluid imagem-sobreposta"
+          />
+        </Link>
       </Row>
     </Container>
   );

@@ -6,7 +6,7 @@ import DX from './paginas/dxinfo'
 import Tecnica from './paginas/tecnica';
 import ListaTecnicas from './paginas/listatecnicas';
 import RoboDex from './paginas/robodex';
-
+import Teste from './testacodigo';
 import './App.css';
 
 function App() {
@@ -21,6 +21,7 @@ function App() {
         <Route path="/dxinfo" element={<DX/>} />
         <Route path="/tecnica/:id" element={<Tecnica/>} />
         <Route path="/listatecnicas" element={<ListaTecnicas/>} />
+        <Route path="/teste" element={<Teste/>} />
       </Routes>
     </BrowserRouter>    
     
