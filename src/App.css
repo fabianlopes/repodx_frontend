@@ -342,7 +342,7 @@ input[type="radio"] {
 
 
 /* Estilo personalizado para todos os ToggleButtonGroup */
-.botoes {
+.grupobotoestg {
 
   display: flex;
   flex-direction: column;
@@ -352,3 +352,26 @@ input[type="radio"] {
   
 }
 
+.botoestg {
+  background-color: #110f82;
+  box-shadow: 2px 2px 4px #888;
+
+}
+
+.botoestg:hover {
+  background-color: rgb(20, 5, 226);
+}
+
+.botoestg:checked {
+  background-color: rgb(138, 180, 60);
+}
+
+
+.imagem-robodex {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  z-index: 999;
+  width: 230px;
+  height: 320px;
+}
