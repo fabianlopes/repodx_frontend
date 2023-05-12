@@ -269,10 +269,10 @@ input[type="radio"] {
 
 
 .home {
-  background-color: #ffffff; /* Defina a cor de fundo que desejar */
+  background-color: #ffffff;
   background-image: url('./imagens/CicloDX.png');
-  height: 100vh; /* altura igual à altura da tela */
-  width: 100%; /* largura igual à largura da tela */
+  height: 100vh;
+  width: 100%;
   background-repeat: repeat;
   background-size: 15% auto;
   overflow: hidden;
@@ -286,7 +286,7 @@ input[type="radio"] {
   height: 100%;
   top: 0;
   left: 0;
-  background-color: rgba(133, 143, 231, 0.5); /* Defina a cor de fundo com a transparência desejada */
+  background-color: rgba(133, 143, 231, 0.5);
 }
 
 .home .carousel {
@@ -300,10 +300,10 @@ input[type="radio"] {
 
 
 .robodex {
-  background-color: #ffffff; /* Defina a cor de fundo que desejar */
+  background-color: #ffffff;
   background-image: url('./imagens/CicloDX.png');
-  height: 100vh; /* altura igual à altura da tela */
-  width: 100%; /* largura igual à largura da tela */
+  height: 100vh;
+  width: 100%;
   background-repeat: repeat;
   background-size: 15% auto;
   overflow: hidden;
@@ -317,7 +317,7 @@ input[type="radio"] {
   height: 100%;
   top: 0;
   left: 0;
-  background-color: rgba(133, 143, 231, 0.5); /* Defina a cor de fundo com a transparência desejada */
+  background-color: rgba(133, 143, 231, 0.5);
 }
 
 .robodex .carousel {
@@ -331,17 +331,6 @@ input[type="radio"] {
   background-color: #ffffff;
 }
 
-.robodex .carousel-box .card-body {
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  background-color: #ffffff;
-
-}
-
-
-/* Estilo personalizado para todos os ToggleButtonGroup */
 .grupobotoestg {
 
   display: flex;
@@ -353,19 +342,15 @@ input[type="radio"] {
 }
 
 .botoestg {
-  background-color: #110f82;
+  background-color: #ffffff;
   box-shadow: 2px 2px 4px #888;
-
+  color: #110f82;
 }
 
 .botoestg:hover {
-  background-color: rgb(20, 5, 226);
+  background-color: gray;
+  color: #ffffff;
 }
-
-.botoestg:checked {
-  background-color: rgb(138, 180, 60);
-}
-
 
 .imagem-robodex {
   position: absolute;
@@ -375,3 +360,45 @@ input[type="radio"] {
   width: 230px;
   height: 320px;
 }
+
+.filtro {
+  background-color: #ffffff;
+  background-image: url('./imagens/CicloDX.png');
+  height: 100vh;
+  width: 100%;
+  background-repeat: repeat;
+  background-size: 15% auto;
+}
+
+.filtro::before {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(133, 143, 231, 0.5);
+}
+
+.filtroform {
+  position: relative;
+  z-index: 1;
+  border: 2xp solid;
+  border-radius: 10px;
+  box-shadow: 10px 10px 5px #888;
+  text-align: justify;
+  background-color: #ffffff;
+
+}
+
+.negrito {
+  font-weight: bold;
+}
+
+.botaovoltar {
+  background-color: #110f82;
+  position: relative;
+  z-index: 1;
+}
+

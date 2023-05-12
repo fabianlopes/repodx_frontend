@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import tedxa from '../data/TEDXA.json';
 import TabelaSearch from '../components/tabelapesquisa';
 import imagem_assistente from '../imagens/robodex.png';
+import BotaoVoltar from '../components/botaovoltar';
 
 function RoboDex() {
   
@@ -81,7 +82,7 @@ function RoboDex() {
                     <label>
                       <h2>O que você quer avaliar?</h2>
                     </label>
-                    <ToggleButtonGroup type="checkbox" defaultValue={[1, 3]} className='grupobotoestg' >
+                    <ToggleButtonGroup type="checkbox"  className='grupobotoestg' >
                       <ToggleButton type='checkbox' className='botoestg' id="tag01" name="tag01" value="tag01" onChange={handleChange} >
                         Emoções e humor durante o desenvolvimento de software
                       </ToggleButton>                      
@@ -97,7 +98,7 @@ function RoboDex() {
                     <label>
                       <h2>Em que momento você quer avaliar?</h2>
                     </label>
-                    <ToggleButtonGroup type="checkbox" defaultValue={[1, 3]} className='grupobotoestg'>
+                    <ToggleButtonGroup type="checkbox" className='grupobotoestg'>
                       <ToggleButton type='checkbox' className='botoestg' id="tag05" name="tag05" value="tag05" onChange={handleChange} >
                         Reuniões
                       </ToggleButton>
@@ -117,9 +118,9 @@ function RoboDex() {
               </Carousel.Item>
               <Carousel.Item>
                     <label>
-                    <h2>Como você vai ralizar a avaliação? </h2>
+                    <h2>Como você vai realizar a avaliação? </h2>
                     </label>
-                    <ToggleButtonGroup type="checkbox" defaultValue={[1, 3]} className='grupobotoestg'>
+                    <ToggleButtonGroup type="checkbox"  className='grupobotoestg'>
                       <ToggleButton type='checkbox' className='botoestg' id="tag10" name="tag10" value="tag10" onChange={handleChange}>
                         Usando autoavaliações pelos próprios participantes
                       </ToggleButton>
@@ -165,7 +166,7 @@ function RoboDex() {
                         <h2>Qual o nível de experiência profissional dos participantes da avaliação de DX?</h2>
                         (Os níveis são distribuídos da seguinte forma: 1 a 3 anos, iniciante; 3 a 5 anos, experiente; acima de 5 anos, especialista)
                     </label>
-                    <ToggleButtonGroup type="checkbox" defaultValue={[1, 3]} className='grupobotoestg'>
+                    <ToggleButtonGroup type="checkbox"  className='grupobotoestg'>
                       <ToggleButton type='checkbox' className='botoestg' id="tag20" name="tag20" value="tag20" onChange={handleChange}>
                         Especialista
                       </ToggleButton>
@@ -197,7 +198,7 @@ function RoboDex() {
                     <label>
                         <h2>Qual o ambiente da avaliação?</h2>
                     </label>
-                    <ToggleButtonGroup type="checkbox" defaultValue={[1, 3]} className='grupobotoestg'>
+                    <ToggleButtonGroup type="checkbox"  className='grupobotoestg'>
                       <ToggleButton type='checkbox' className='botoestg' id="tag13" name="tag13" value="tag13" onChange={handleChange}>
                         Academia
                       </ToggleButton>
@@ -232,8 +233,10 @@ function RoboDex() {
             alt="robodex"
             className="img-fluid imagem-robodex"
             onClick={handleSubmit}
-            />            
+            />
+            
         </Form>
+        <BotaoVoltar to='/' text='Voltar'/>
       </Row>
 
       <Modal show={showModal} onHide={handleClose}>

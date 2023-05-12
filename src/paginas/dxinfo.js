@@ -1,44 +1,43 @@
 import React from 'react';
-import { Container, Row, Col, Card, Carousel } from 'react-bootstrap';
+import { Container, Row, Carousel } from 'react-bootstrap';
 import Cabecalho from '../components/cabecalho';
-const slides = require.context('../imagens/slides', false, /\.(png|JPG|jpe?g|svg)$/);
+import BotaoVoltar from '../components/botaovoltar';
 
+const slides = require.context('../imagens/slides', false, /\.(png|JPG|jpe?g|svg)$/);
 
 function DX() {  
     
   
   return (
 
-    <Container fluid>
-
+    <Container fluid className='home'>
       <Row>
-        <Col xs={12}>
           <Cabecalho />
-        </Col>
+      </Row>
+      <Row className="d-flex justify-content-center align-items-center">
+        <div className="d-flex justify-content-center align-items-center vh-50">          
+          <Carousel interval={300000}            
+            variant="dark"
+            className="d-block vh-50"
+            controls={false}
+            slide={false}
+            defaultActiveIndex={0}
+          >
+              {slides.keys().map((slide) => (
+              <Carousel.Item key={slide}>                           
+                <div className="card dxinfo-box">
+                  <div className="card-body">
+                    <img className='imagem-dxinfo' key={slide} src={slides(slide)} alt="slide" />
+                  </div>
+                </div>
+              </Carousel.Item>
+              ))}              
+          </Carousel>
+        </div>        
       </Row>
       <Row>
-
-        <Card>            
-            <Card.Body>
-                <Card.Title></Card.Title>
-                <Card.Text>
-                    <Carousel>
-                        {slides.keys().map((slide) => (
-                        <Carousel.Item key={slide.id}>                           
-                          <div className="card dxinfo-box">
-                            <div className="card-body">
-                              <img className='imagem-dxinfo' key={slide} src={slides(slide)} alt="" />
-                            </div>
-                          </div>
-                        </Carousel.Item>
-                        ))}
-                    </Carousel>      
-                </Card.Text>          
-            </Card.Body>
-        </Card>
-
+        <BotaoVoltar to='/' text='Voltar'/>
       </Row>
-
     </Container>
 
   );
