@@ -398,6 +398,8 @@ input[type="radio"] {
 
 .botaovoltar {
   background-color: #110f82;
+  font-size: large;
+  color: #ffffff;
   position: relative;
   z-index: 1;
 }

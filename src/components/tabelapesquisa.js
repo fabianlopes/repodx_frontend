@@ -33,7 +33,7 @@ function TabelaSearch({ data }) {
             {filteredData.map((row, index) => {
               return (
                 <tr key={index} data-toogle="tooltip" title={row.resumo}>                
-                  <td><Link to={`/tecnica/${row.ID}`}>{row.ID}</Link></td>                
+                  <td><Link to={`/tecnica/${row.ID}`} target='_blank'>{row.ID}</Link></td>                
                 <td>{row.nome}</td>
                 </tr>
                 );

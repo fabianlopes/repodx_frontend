@@ -84,23 +84,23 @@ function RoboDex() {
                     </label>
                     <ToggleButtonGroup type="checkbox"  className='grupobotoestg' >
                       <ToggleButton type='checkbox' className='botoestg' id="tag01" name="tag01" value="tag01" onChange={handleChange} >
-                        Emoções e humor durante o desenvolvimento de software
+                        Emoções, humor e sentimentos durante o desenvolvimento de software
                       </ToggleButton>                      
                       <ToggleButton type='checkbox' className='botoestg' id="tag02" name="tag02" value="tag02" onChange={handleChange} >
-                        Emoções e humor após o desenvolvimento de software
+                        Emoções, humor e sentimentos após o desenvolvimento de software
                       </ToggleButton>                      
                       <ToggleButton type='checkbox' className='botoestg' id="tag03" name="tag03" value="tag03" onChange={handleChange} >
-                        Mudanças de atividade/Tarefa
+                      Emoções, humor e sentimentos durante as mudanças de atividade/tarefa
                       </ToggleButton>
                     </ToggleButtonGroup>
               </Carousel.Item>
               <Carousel.Item>
                     <label>
-                      <h2>Em que momento você quer avaliar?</h2>
+                      <h2>Qual atividade você quer avaliar?</h2>
                     </label>
                     <ToggleButtonGroup type="checkbox" className='grupobotoestg'>
                       <ToggleButton type='checkbox' className='botoestg' id="tag05" name="tag05" value="tag05" onChange={handleChange} >
-                        Reuniões
+                        Atividades com reuniões
                       </ToggleButton>
                       <ToggleButton type='checkbox' className='botoestg' id="tag06" name="tag06" value="tag06" onChange={handleChange} >
                         Atividades com muitas intervenções/estímulos
@@ -109,10 +109,10 @@ function RoboDex() {
                         Atividades com muitas alterações de atividades/tarefas
                       </ToggleButton>
                       <ToggleButton type='checkbox' className='botoestg' id="tag08" name="tag08" value="tag08" onChange={handleChange} >
-                        Ao usar tecnologia MOBILE
+                        Atividades que envolvam tecnologias móveis
                       </ToggleButton>
                       <ToggleButton type='checkbox' className='botoestg' id="tag09" name="tag09" value="tag09" onChange={handleChange} >
-                        Ao usar Deep Learnig (DL)
+                        Atividades que envolvam Deep Learnig (DL)
                       </ToggleButton>
                     </ToggleButtonGroup>
               </Carousel.Item>
@@ -124,11 +124,8 @@ function RoboDex() {
                       <ToggleButton type='checkbox' className='botoestg' id="tag10" name="tag10" value="tag10" onChange={handleChange}>
                         Usando autoavaliações pelos próprios participantes
                       </ToggleButton>
-                      <ToggleButton type='checkbox' className='botoestg' id="tag11" name="tag11" value="tag11" onChange={handleChange}>
-                        Utilizando base de textos (emails, sites de perguntas e respostas)
-                      </ToggleButton>
                       <ToggleButton type='checkbox' className='botoestg' id="tag12" name="tag12" value="tag12" onChange={handleChange}>
-                        Transcrições de áudios/gravações
+                        Usando áudios/gravações
                       </ToggleButton>
                       <ToggleButton type='checkbox' className='botoestg' id="tag15" name="tag15" value="tag15" onChange={handleChange}>
                         Usando questionários
@@ -137,7 +134,7 @@ function RoboDex() {
                         Usando entrevistas
                       </ToggleButton>
                       <ToggleButton type='checkbox' className='botoestg' id="tag17" name="tag17" value="tag17" onChange={handleChange}>
-                        Usando mineração de dados
+                        Usando mineração de dados (bases de texto, emails, sites de perguntas e respostas, fóruns etc)
                       </ToggleButton>
                     </ToggleButtonGroup>
               </Carousel.Item>
@@ -164,17 +161,16 @@ function RoboDex() {
               <Carousel.Item>
                     <label>
                         <h2>Qual o nível de experiência profissional dos participantes da avaliação de DX?</h2>
-                        (Os níveis são distribuídos da seguinte forma: 1 a 3 anos, iniciante; 3 a 5 anos, experiente; acima de 5 anos, especialista)
                     </label>
-                    <ToggleButtonGroup type="checkbox"  className='grupobotoestg'>
-                      <ToggleButton type='checkbox' className='botoestg' id="tag20" name="tag20" value="tag20" onChange={handleChange}>
-                        Especialista
+                    <ToggleButtonGroup type="checkbox"  className='grupobotoestg'>                      
+                      <ToggleButton type='checkbox' className='botoestg' id="tag18" name="tag18" value="tag18" onChange={handleChange}>
+                        Iniciante (até 3 anos)
                       </ToggleButton>
                       <ToggleButton type='checkbox' className='botoestg' id="tag19" name="tag19" value="tag19" onChange={handleChange}>
-                        Experiente
+                        Experiente (3 a 5 anos)
                       </ToggleButton>
-                      <ToggleButton type='checkbox' className='botoestg' id="tag18" name="tag18" value="tag18" onChange={handleChange}>
-                        Iniciante
+                      <ToggleButton type='checkbox' className='botoestg' id="tag20" name="tag20" value="tag20" onChange={handleChange}>
+                        Especialista (acima de 5 anos)
                       </ToggleButton>
                     </ToggleButtonGroup>
               </Carousel.Item>
@@ -206,39 +202,18 @@ function RoboDex() {
                         Indústria
                       </ToggleButton>
                      </ToggleButtonGroup>
-              </Carousel.Item>
-              <Carousel.Item>
-                    <label>
-                        <h2>Qual o tempo disponível aproximado para utilização da técnica na avaliação?</h2>
-                        <p>(em minutos)</p>
-                    </label>
-                    <ToggleButtonGroup type="radio" defaultValue={1} name='tagtempo' className='grupobotoestg'>
-                      <ToggleButton type='radio' id="tagr4" value="3" onChange={handleChange}>
-                        1 - 3
-                      </ToggleButton>
-                      <ToggleButton type='radio' id="tagr5" value="6" onChange={handleChange}>
-                        4 - 6
-                      </ToggleButton>
-                      <ToggleButton type='radio' id="tagr6" value="12" onChange={handleChange}>
-                        6 - 12
-                      </ToggleButton>
-                      <ToggleButton type='radio' id="tagr7" value="13" onChange={handleChange}>
-                        Acima de 12
-                      </ToggleButton>
-                    </ToggleButtonGroup>
-              </Carousel.Item>
+              </Carousel.Item>              
             </Carousel>
             <img
             src={imagem_assistente}
             alt="robodex"
             className="img-fluid imagem-robodex"
             onClick={handleSubmit}
-            />
-            
-        </Form>
+            />            
+        </Form>        
+        <Button onClick={handleSubmit} className='botaovoltar'>Enviar opções</Button>        
         <BotaoVoltar to='/' text='Voltar'/>
       </Row>
-
       <Modal show={showModal} onHide={handleClose}>
         <Modal.Header closeButton>
           <Modal.Title>Técnicas Sugeridas</Modal.Title>
