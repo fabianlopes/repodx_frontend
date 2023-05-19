@@ -57,7 +57,7 @@ function Assistente() {
               </div>
               <div className="form-check shadow bg-light border-primary">
                 <label className='negrito'>
-                  Em que momento você quer avaliar? <br/>
+                  Qual atividade você quer avaliar? <br/>
                 </label>
                 <Form.Group>
                     <Form.Check inline type="checkbox" label="Reuniôes" name='tag05' value="tag05" onChange={handleChange} />
@@ -122,18 +122,7 @@ function Assistente() {
                     <Form.Check inline type="checkbox" label="Academia" name='tag13' value="tag13" onChange={handleChange} />
                     <Form.Check inline type="checkbox" label="Indústria" name='tag14' value="tag14" onChange={handleChange} />
                 </Form.Group>
-              </div>                
-              <div className="form-check shadow bg-light border-primary">
-                <label className='negrito'>
-                    Qual o tempo disponível aproximado para utilização da técnica de avaliação de DX (em minutos)?
-                </label>
-                <Form.Group>
-                    <Form.Check inline type="radio" label="1 - 3" name='tagr2' value="3" onChange={handleChange} />
-                    <Form.Check inline type="radio" label="4 - 6" name='tagr2' value="6" onChange={handleChange} />
-                    <Form.Check inline type="radio" label="6 - 12" name='tagr2' value="12" onChange={handleChange} />
-                    <Form.Check inline type="radio" label="acima de 12" name='tagr2' value="13" onChange={handleChange} />
-                </Form.Group>
-            </div>
+              </div>
           </Form>            
         </Col>
         <Col xs='4'>
