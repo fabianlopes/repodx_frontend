@@ -331,6 +331,13 @@ input[type="radio"] {
   background-color: #ffffff;
 }
 
+.robodex .carousel h2 {
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
 .grupobotoestg {
 
   display: flex;
@@ -402,5 +409,116 @@ input[type="radio"] {
   color: #ffffff;
   position: relative;
   z-index: 1;
+}
+
+.imagem-enviar {
+  z-index: 999;
+  width: 130px;
+  height: 220px;
+}
+
+.imagem-balao {
+  z-index: 999;
+  width:  50px;
+  height: 100px;
+  margin-top: 50px;
+}
+
+.carousel-images-container {
+  display: flex;
+  justify-content: center;
+  margin-top: -250px;
+  gap: 1rem;
+}
+
+.overlay-image-esquerda {
+  position: absolute;
+  top: 25px;
+  left: 20px;
+}
+
+.overlay-image-direita {
+  position: absolute;
+  top: 25px;
+  right: 20px;
+}
+
+.buttonclick {
+  position: absolute;
+  left: 50%;
+  top: 70%;
+  transform: translateX(-50%) translateY(-50%);
+  display: flex;
+  justify-content: center;
+  line-height: 30px;
+  
+  background: #fff;
+  width: 100px;
+  padding: 20px 30px;
+
+  border: 5px solid #110f82;
+  color: #110f82;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-align:center;
+  
+  z-index: 2;
+  @include transition(all .15s .15s ease-out);
+
+    &:after,
+    &:before {
+        position: absolute;
+        width: 100%;
+        max-width: 100%;
+        top: 100%;
+        left: 0;
+        bottom: -10px;
+        content: '';
+        z-index: 1;
+        @include transition(all .15s .15s ease-out);
+    }
+
+    &:before {
+        background: #110f82;
+        top: 10px;
+        left: -15px;
+        height: 100%;
+        width: 15px;
+    }
+
+    &:after {
+        width:100%;
+        background: #110f82;
+        right: 0px;
+        left: -15px;
+        height: 15px;
+    }
+
+    &:hover {
+      background: #110f82;
+      color: #fff;
+      margin-left: -7.5px;
+      margin-bottom: -7.5px;
+
+      &:after,
+      &:before {
+          top: 100%;
+          left: 0;
+          bottom: 0px;
+      }
+
+      &:before {
+          top: 0px;
+          left: 0px;
+          width: 0px;
+      }
+
+      &:after {
+          right: 0px;
+          left: 0px;
+          height: 0px;
+      }
+
+    }
 }
 

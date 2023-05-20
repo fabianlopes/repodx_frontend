@@ -4,7 +4,9 @@ import Cabecalho from '../components/cabecalho';
 import { Link } from 'react-router-dom';
 import tedxa from '../data/TEDXA.json';
 import TabelaSearch from '../components/tabelapesquisa';
-import imagem_assistente from '../imagens/robodex.png';
+import imagem_assistente from '../imagens/robodex-semfala.png';
+import balao from '../imagens/balao-aberto.png';
+import balao2 from '../imagens/balao-aberto2.png';
 import BotaoVoltar from '../components/botaovoltar';
 
 function RoboDex() {
@@ -58,12 +60,11 @@ function RoboDex() {
   return (
 
     <Container fluid className='robodex'>
-      <Row className='d-flex flex-column justify-content-center'>
+      <Row>
           <Cabecalho />        
       </Row>
-      <Row className='w-80'>
-
-          <Form onSubmit={handleSubmit}>
+      <Row>
+          <Form onSubmit={handleSubmit}>          
             <Carousel
             interval={300000}
             variant="dark"
@@ -75,8 +76,7 @@ function RoboDex() {
                     <h1>O que precisamos saber</h1>
                     <p>Aqui precisamos saber informações para poder auxiliar melhor na seleção da técnica de avaliação de DX</p>
                     <p>Não conhece as definições da DX? clique <Link to='/dxinfo'>AQUI</Link> para maiores informações</p>
-                    <h2>Utilize os controles laterais e inferiores para navegação entre as perguntas</h2>
-                    <h2>Ao final da seleção das escolhas, clique no ROBODEX para obter as técnicas sugeridas!</h2>
+                    <h2>Utilize os controles para navegação entre as perguntas</h2>                    
               </Carousel.Item>
               <Carousel.Item>
                     <label>
@@ -143,7 +143,7 @@ function RoboDex() {
                         <h2>Qual o número de participantes da avaliação de DX?</h2>
                         (pode ser respondido com o número provável de colaboradores da organização)
                     </label>
-                    <ToggleButtonGroup type="radio" name="tagnumero" defaultValue={1} className='grupobotoestg'>
+                    <ToggleButtonGroup type="radio" name="tagnumero" className='grupobotoestg'>
                       <ToggleButton type='radio' className='botoestg' id='1' value={1} onChange={handleChange}>
                         1 - 50
                       </ToggleButton>
@@ -178,14 +178,14 @@ function RoboDex() {
                     <label>
                         <h2>A avaliação de DX vai ser realizada de que forma?</h2>
                     </label>
-                    <ToggleButtonGroup type="radio" defaultValue={1} name='tagforma' className='grupobotoestg'>
-                      <ToggleButton type='radio' id="tagr1" value="tag21" onChange={handleChange}>
+                    <ToggleButtonGroup type="radio" name='tagforma' className='grupobotoestg'>
+                      <ToggleButton className='botoestg' type='radio' id="tagr1" value="tag21" onChange={handleChange}>
                         Remotamente
                       </ToggleButton>
-                      <ToggleButton type='radio' id="tagr2" value="tag22" onChange={handleChange}>
+                      <ToggleButton className='botoestg' type='radio' id="tagr2" value="tag22" onChange={handleChange}>
                         Presencial
                       </ToggleButton>
-                      <ToggleButton type='radio' id="tagr3" value="tag23" onChange={handleChange}>
+                      <ToggleButton className='botoestg' type='radio' id="tagr3" value="tag23" onChange={handleChange}>
                         Híbrida
                       </ToggleButton>
                     </ToggleButtonGroup>
@@ -203,16 +203,36 @@ function RoboDex() {
                       </ToggleButton>
                      </ToggleButtonGroup>
               </Carousel.Item>              
-            </Carousel>
-            <img
-            src={imagem_assistente}
-            alt="robodex"
-            className="img-fluid imagem-robodex"
-            onClick={handleSubmit}
-            />            
-        </Form>        
-        <Button onClick={handleSubmit} className='botaovoltar'>Enviar opções</Button>        
-        <BotaoVoltar to='/' text='Voltar'/>
+            </Carousel>            
+            <BotaoVoltar to='/' text='Voltar'/>
+            <div className='carousel-images-container' >
+              <div className="overlay-image-esquerda">
+                <img
+                  src={imagem_assistente}
+                  alt="robodex"
+                  className="img-fluid imagem-enviar"
+                />
+                <img
+                  src={balao}
+                  alt="balao"
+                  className="img-fluid imagem-balao"
+                />
+              </div>
+              <div className="overlay-image-direita">
+                <img
+                  src={balao2}
+                  alt="balao"
+                  className="img-fluid imagem-balao"
+                />
+                <img
+                  src={imagem_assistente}
+                  alt="robodex"
+                  className="img-fluid imagem-enviar"
+                />                
+              </div>
+              <Button onClick={handleSubmit} className='buttonclick'>ENVIAR OPÇÕES</Button>
+            </div>            
+        </Form>
       </Row>
       <Modal show={showModal} onHide={handleClose}>
         <Modal.Header closeButton>
