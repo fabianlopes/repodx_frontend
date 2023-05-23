@@ -90,7 +90,13 @@ function RoboDex() {
                         Emoções, humor e sentimentos após o desenvolvimento de software
                       </ToggleButton>                      
                       <ToggleButton type='checkbox' className='botoestg' id="tag03" name="tag03" value="tag03" onChange={handleChange} >
-                      Emoções, humor e sentimentos durante as mudanças de atividade/tarefa
+                        Emoções, humor e sentimentos durante as mudanças de atividade/tarefa
+                      </ToggleButton>
+                      <ToggleButton type='checkbox' className='botoestg' id="tag04" name="tag24" value="tag04" onChange={handleChange} >
+                        Emoções, humor e sentimentos durante o aprendizado de novas tecnologias
+                      </ToggleButton>
+                      <ToggleButton type='checkbox' className='botoestg' id="tag30" name="tag30" value="tag30" onChange={handleChange} >
+                        Emoções, humor e sentimentos durante o uso de uma ferramenta, tecnologia ou metodologia
                       </ToggleButton>
                     </ToggleButtonGroup>
               </Carousel.Item>
@@ -112,7 +118,10 @@ function RoboDex() {
                         Atividades que envolvam tecnologias móveis
                       </ToggleButton>
                       <ToggleButton type='checkbox' className='botoestg' id="tag09" name="tag09" value="tag09" onChange={handleChange} >
-                        Atividades que envolvam Deep Learnig (DL)
+                        Atividades que envolvam aprendizado de máquina
+                      </ToggleButton>
+                      <ToggleButton type='checkbox' className='botoestg' id="tag04" name="tag04" value="tag04" onChange={handleChange} >
+                        Atividades que envolvam requisitos
                       </ToggleButton>
                     </ToggleButtonGroup>
               </Carousel.Item>
@@ -202,7 +211,26 @@ function RoboDex() {
                         Indústria
                       </ToggleButton>
                      </ToggleButtonGroup>
-              </Carousel.Item>              
+              </Carousel.Item>
+              <Carousel.Item>
+                    <label>
+                      <h2>Você quer avaliar uma emoção, humor ou sentimento específico?</h2>
+                    </label>
+                    <ToggleButtonGroup type="checkbox"  className='grupobotoestg' >
+                      <ToggleButton type='checkbox' className='botoestg' id="tag26" name="tag26" value="tag26" onChange={handleChange} >
+                        Felicidade
+                      </ToggleButton>                      
+                      <ToggleButton type='checkbox' className='botoestg' id="tag27" name="tag27" value="tag27" onChange={handleChange} >
+                        Valência, excitação ou dominância
+                      </ToggleButton>                      
+                      <ToggleButton type='checkbox' className='botoestg' id="tag28" name="tag28" value="tag28" onChange={handleChange} >
+                        Elogios, satisfação, perdas, acidentes, ambientes hostis etc
+                      </ToggleButton>
+                      <ToggleButton type='checkbox' className='botoestg' id="tag29" name="tag29" value="tag29" onChange={handleChange} >
+                        Profundidade, foco, concentração e agradabilidade
+                      </ToggleButton>
+                    </ToggleButtonGroup>
+              </Carousel.Item>
             </Carousel>            
             <BotaoVoltar to='/' text='Voltar'/>
             <div className='carousel-images-container' >

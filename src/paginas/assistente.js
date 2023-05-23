@@ -70,7 +70,7 @@ function Assistente() {
               </div>
               <div className="form-check shadow bg-light border-primary">
                 <label className='negrito'>
-                  Como você vai ralizar a avaliação? <br/>
+                  Como você vai realizar a avaliação? <br/>
                 </label>
                 <Form.Group>
                     <Form.Check inline type="checkbox" label="Usando autoavaliações pelos próprios participantes" name='tag10' value="tag10" onChange={handleChange} />
