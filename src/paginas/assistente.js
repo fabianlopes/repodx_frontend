@@ -43,16 +43,16 @@ function Assistente() {
                 <Form.Group>                
                     <Form.Check inline type="checkbox" label="Emoções e humor durante o desenvolvimento de software" name='tag01' value="tag01" onChange={handleChange} />
                     <Form.Check inline type="checkbox" label="Emoções e humor após o desenvolvimento de software" name='tag02' value="tag02" onChange={handleChange} />
-                    <Form.Check inline type="checkbox" label="Mudanças de atividade/Tarefa" name='tag03' value="tag03" onChange={handleChange} />
-                    <Form.Check inline type="checkbox" label="Análise de Requisitos" name='tag04' value="tag04" onChange={handleChange} />
-                    <Form.Check inline type="checkbox" label="Aprendizado de tecnologia" name='tag24' value="tag24" onChange={handleChange} />
+                    <Form.Check inline type="checkbox" label="Emoções, humor e sentimentos durante as mudanças de atividade/tarefa" name='tag03' value="tag03" onChange={handleChange} />
+                    <Form.Check inline type="checkbox" label="Emoções, humor e sentimentos durante o aprendizado de novas tecnologias" name='tag24' value="tag24" onChange={handleChange} />
+                    <Form.Check inline type="checkbox" label="Emoções, humor e sentimentos durante o uso de uma ferramenta, tecnologia ou metodologia" name='tag30' value="tag30" onChange={handleChange} />
+                    <Form.Check inline type="checkbox" label="Emoções, humor e sentimentos durante elogios, perdas, acidentes ou em ambientes hostis" name='tag28' value="tag28" onChange={handleChange} />
                     <Form.Check inline type="checkbox" label="O estado afetivo dos participantes (positivos ou negativos)" name='tag25' value="tag25" onChange={handleChange} />
                     <Form.Check inline type="checkbox" label="A felicidade dos participantes no processo de desenvolvimento de software" name='tag26' value="tag26" onChange={handleChange} />
                     <Form.Check inline type="checkbox" label="Bases de textos/emails (JSON, XML, EML, TXT)" name='tag11' value="tag11" onChange={handleChange} />
                     <Form.Check inline type="checkbox" label="Dimensões afetivas (valência, excitação e dominância)" name='tag27' value="tag27" onChange={handleChange} />
-                    <Form.Check inline type="checkbox" label="Eventos afetivos (elogios, satisfação, perdas, acidentes, ambientes hostis etc)" name='tag28' value="tag28" onChange={handleChange} />
                     <Form.Check inline type="checkbox" label="Profundidade, foco, concentração e agradabilidade" name='tag29' value="tag29" onChange={handleChange} />
-                    <Form.Check inline type="checkbox" label="Uma ferramenta, tecnologia ou metodologia" name='tag30' value="tag30" onChange={handleChange} />
+                    
                 </Form.Group>
               </div>
               <div className="form-check shadow bg-light border-primary">
@@ -60,12 +60,12 @@ function Assistente() {
                   Qual atividade você quer avaliar? <br/>
                 </label>
                 <Form.Group>
-                    <Form.Check inline type="checkbox" label="Reuniôes" name='tag05' value="tag05" onChange={handleChange} />
+                    <Form.Check inline type="checkbox" label="Atividades com reuniões" name='tag05' value="tag05" onChange={handleChange} />
                     <Form.Check inline type="checkbox" label="Atividades com muitas intervenções/estímulos" name='tag06' value="tag06" onChange={handleChange} />
                     <Form.Check inline type="checkbox" label="Atividades com muitas alterações de atividades/tarefas" name='tag07' value="tag07" onChange={handleChange} />
-                    <Form.Check inline type="checkbox" label="Ao usar tecnologia MOBILE" name='tag08' value="tag08" onChange={handleChange} />
-                    <Form.Check inline type="checkbox" label="Ao usar Deep Learnig (DL)" name='tag09' value="tag09" onChange={handleChange} />
-                    
+                    <Form.Check inline type="checkbox" label="Atividades que envolvam tecnologias móveis" name='tag08' value="tag08" onChange={handleChange} />
+                    <Form.Check inline type="checkbox" label="Atividades que envolvam aprendizado de máquina" name='tag09' value="tag09" onChange={handleChange} />
+                    <Form.Check inline type="checkbox" label="Atividades que envolvam requisitos" name='tag04' value="tag04" onChange={handleChange} />
                 </Form.Group>
               </div>
               <div className="form-check shadow bg-light border-primary">
@@ -73,12 +73,11 @@ function Assistente() {
                   Como você vai realizar a avaliação? <br/>
                 </label>
                 <Form.Group>
-                    <Form.Check inline type="checkbox" label="Usando autoavaliações pelos próprios participantes" name='tag10' value="tag10" onChange={handleChange} />
-                    <Form.Check inline type="checkbox" label="Utilizando base de textos (emails, sites de perguntas e respostas)" name='tag11' value="tag11" onChange={handleChange} />
-                    <Form.Check inline type="checkbox" label="Transcrições de áudios/gravações" name='tag12' value="tag12" onChange={handleChange} />
-                    <Form.Check inline type="checkbox" label="Usando questionário" name='tag15' value="tag15" onChange={handleChange} />
-                    <Form.Check inline type="checkbox" label="Usando entrevista" name='tag16' value="tag16" onChange={handleChange} />
-                    <Form.Check inline type="checkbox" label="Usando mineração de dados" name='tag17' value="tag17" onChange={handleChange} />
+                    <Form.Check inline type="checkbox" label="Usando autoavaliações pelos próprios participantes" name='tag10' value="tag10" onChange={handleChange} />                    
+                    <Form.Check inline type="checkbox" label="Usando áudios/gravações" name='tag12' value="tag12" onChange={handleChange} />
+                    <Form.Check inline type="checkbox" label="Usando questionários" name='tag15' value="tag15" onChange={handleChange} />
+                    <Form.Check inline type="checkbox" label="Usando entrevistas" name='tag16' value="tag16" onChange={handleChange} />
+                    <Form.Check inline type="checkbox" label="Usando mineração de dados (bases de texto, emails, sites de perguntas e respostas, fóruns etc)" name='tag17' value="tag17" onChange={handleChange} />
                 </Form.Group>
               </div>
               <div className="form-check shadow bg-light border-primary">
@@ -96,12 +95,11 @@ function Assistente() {
               <div className="form-check shadow bg-light border-primary">
                 <label className='negrito'>
                     Qual o nível de experiência profissional dos participantes da avaliação de DX que será realizada? <br></br>
-                    (Os níveis são distribuídos da seguinte forma: 1 a 3 anos, iniciante; 3 a 5 anos, experiente; acima de 5 anos, especialista)
                 </label>
                 <Form.Group>
-                    <Form.Check inline type="checkbox" name='tag20' label="Especialista" value="tag20" onChange={handleChange} />
-                    <Form.Check inline type="checkbox" name='tag19' label="Experiente" value="tag19" onChange={handleChange} />
-                    <Form.Check inline type="checkbox" name='tag18' label="Iniciante" value="tag18" onChange={handleChange} />
+                    <Form.Check inline type="checkbox" name='tag18' label="Iniciante (1 a 3 anos)" value="tag18" onChange={handleChange} />
+                    <Form.Check inline type="checkbox" name='tag19' label="Experiente (3 a 5 anos)" value="tag19" onChange={handleChange} />                    
+                    <Form.Check inline type="checkbox" name='tag20' label="Especialista (acima de 5 anos)" value="tag20" onChange={handleChange} />
                 </Form.Group>
               </div>
               <div className="form-check shadow bg-light border-primary">

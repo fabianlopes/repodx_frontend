@@ -97,6 +97,9 @@ function RoboDex() {
                       </ToggleButton>
                       <ToggleButton type='checkbox' className='botoestg' id="tag30" name="tag30" value="tag30" onChange={handleChange} >
                         Emoções, humor e sentimentos durante o uso de uma ferramenta, tecnologia ou metodologia
+                      </ToggleButton>                      
+                      <ToggleButton type='checkbox' className='botoestg' id="tag28" name="tag28" value="tag28" onChange={handleChange} >
+                        Emoções, humor e sentimentos durante elogios, perdas, acidentes ou em ambientes hostis
                       </ToggleButton>
                     </ToggleButtonGroup>
               </Carousel.Item>
@@ -222,12 +225,12 @@ function RoboDex() {
                       </ToggleButton>                      
                       <ToggleButton type='checkbox' className='botoestg' id="tag27" name="tag27" value="tag27" onChange={handleChange} >
                         Valência, excitação ou dominância
-                      </ToggleButton>                      
-                      <ToggleButton type='checkbox' className='botoestg' id="tag28" name="tag28" value="tag28" onChange={handleChange} >
-                        Elogios, satisfação, perdas, acidentes, ambientes hostis etc
                       </ToggleButton>
                       <ToggleButton type='checkbox' className='botoestg' id="tag29" name="tag29" value="tag29" onChange={handleChange} >
                         Profundidade, foco, concentração e agradabilidade
+                      </ToggleButton>
+                      <ToggleButton type='checkbox' className='botoestg' id="tag30" name="tag30" value="tag30" onChange={handleChange} >
+                        Tédio, ansiedade, confusão, curiosidade, raiva, excitação, esperança, frustração, interesse, orgulho, surpresa, vergonha, alívio
                       </ToggleButton>
                     </ToggleButtonGroup>
               </Carousel.Item>
