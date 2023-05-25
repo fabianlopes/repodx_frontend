@@ -86,10 +86,10 @@ function Assistente() {
                     (pode ser respondido com o número provável de colaboradores da organização)
                 </label>
                 <Form.Group>
-                    <Form.Check inline type="radio" label="1 - 50" value="50" onChange={handleChange} />
-                    <Form.Check inline type="radio" label="51 - 100" value="100" onChange={handleChange} />
-                    <Form.Check inline type="radio" label="101 - 1000" value="1000" onChange={handleChange} />
-                    <Form.Check inline type="radio" label="acima de 1000" value="1001" onChange={handleChange} />
+                    <Form.Check name="tagnumero"  inline type="radio" label="1 - 50" value="50" onChange={handleChange} />
+                    <Form.Check name="tagnumero"  inline type="radio" label="51 - 100" value="100" onChange={handleChange} />
+                    <Form.Check name="tagnumero"  inline type="radio" label="101 - 1000" value="1000" onChange={handleChange} />
+                    <Form.Check name="tagnumero"  inline type="radio" label="acima de 1000" value="1001" onChange={handleChange} />
                 </Form.Group>
               </div>
               <div className="form-check shadow bg-light border-primary">
