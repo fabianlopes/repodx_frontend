@@ -305,5 +305,39 @@
            "tag20",
            "tag21"
           ]
+},
+{  
+  "ID": "TEDXA-11",
+  "nome": "SentiStrengthSE",
+  "resumo": "Um classificador de última geração baseado em léxico, que pode lidar com textos informais curtos, incluindo abreviações, intensificadores e emoticons, intensificadores e emoticons",
+  "metodo": "Mineração de dados",
+  "referencia": "M. Thelwall, K. Buckley, and G. Paltoglou. 2012. Sentiment strength detection for the social web. Journal of the American Society for Information Science and Technology, 63, 1 (January 2012), 163-173. DOI=http://dx.doi.org/10.1002/asi.216622012.",
+  "contexto": "Foram utilizadas duas ferramentas supervisionadas (SentiCR e Senti4SD), e um classificador não supervisionado (SentiStrengthSE), para comparação entre os resultados de cada um, ao analisar dados extraídos do JIRA (4423 posts) e Stack Overflow (5869 snetenças). A comparação foi realizada utilizando a bordagem model-driven, onde as emoções são organizadas em níveis, sendo o nível mais alto composto por amor, alegria, raiva, tristeza, medo e surpresa",
+  "ambiente": "Indústria, Academia",
+  "utilizacao": "Avaliar as emoções de forma léxica em textos curtos, como sentenças e posts",
+  "motivo": "Foi utilizada como baseline de comparação entre outras duas ferramentas para avaliar emoções em textos extraídos de posts do JIRA e sentenças do Stack Overflow",
+  "como_utilizar" : [ "Os dados extraídos são inseridos na ferramenta",
+                      "De forma léxica cada palavra classificada como negativa recebe uma pontuação de polaridade a priori ( -2 a -5)",
+                      "De forma léxica cada palavra classificada como positiva recebe uma pontuação de polaridade a priori ( +2 a +5)",
+                      "A ferramenta classifica as frases positivas com variações da soma de pontuação entre +1 (ausência de sentimento positivo) a +5 (extremamente positivo)",
+					            "A ferramenta classifica as frases positivas com variações da soma de pontuação entre -1 (ausência de sentimento negativo) a -5 (extremamente negativo)",
+                      "A ferramenta também realiza uma classificação geral positiva (pontuação = 1), negativa (pontuação = -1) ou neutro (pontuação = 0)"
+					],
+  "tempo" : "",
+  "participantes" : "2000",
+  "imagem" : "https://github.com/fabianlopes/repodx_frontend/blob/main/src/imagens/tecnicas/dl.png?raw=true",
+  "artigo" : "https://doi.org/10.1145/3196398.3196403",
+  "template" : "http://sentistrength.wlv.ac.uk/",
+  "tags" : ["tag01",
+           "tag02",
+           "tag06",
+           "tag07",
+           "tag09",
+           "tag14",
+           "tag15",
+           "tag19",
+           "tag20",
+           "tag21"
+          ]
 }
 ]
