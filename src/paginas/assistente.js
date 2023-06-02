@@ -47,12 +47,6 @@ function Assistente() {
                     <Form.Check inline type="checkbox" label="Emoções, humor e sentimentos durante o aprendizado de novas tecnologias" name='tag24' value="tag24" onChange={handleChange} />
                     <Form.Check inline type="checkbox" label="Emoções, humor e sentimentos durante o uso de uma ferramenta, tecnologia ou metodologia" name='tag30' value="tag30" onChange={handleChange} />
                     <Form.Check inline type="checkbox" label="Emoções, humor e sentimentos durante elogios, perdas, acidentes ou em ambientes hostis" name='tag28' value="tag28" onChange={handleChange} />
-                    <Form.Check inline type="checkbox" label="O estado afetivo dos participantes (positivos ou negativos)" name='tag25' value="tag25" onChange={handleChange} />
-                    <Form.Check inline type="checkbox" label="A felicidade dos participantes no processo de desenvolvimento de software" name='tag26' value="tag26" onChange={handleChange} />
-                    <Form.Check inline type="checkbox" label="Bases de textos/emails (JSON, XML, EML, TXT)" name='tag11' value="tag11" onChange={handleChange} />
-                    <Form.Check inline type="checkbox" label="Dimensões afetivas (valência, excitação e dominância)" name='tag27' value="tag27" onChange={handleChange} />
-                    <Form.Check inline type="checkbox" label="Profundidade, foco, concentração e agradabilidade" name='tag29' value="tag29" onChange={handleChange} />
-                    
                 </Form.Group>
               </div>
               <div className="form-check shadow bg-light border-primary">
