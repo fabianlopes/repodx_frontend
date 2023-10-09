@@ -270,7 +270,7 @@ input[type="radio"] {
 
 .home {
   background-color: #ffffff;
-  background-image: url('./imagens/CicloDX.png');
+  /* background-image: url('./imagens/CicloDX.png'); */
   height: 100vh;
   width: 100%;
   background-repeat: repeat;
