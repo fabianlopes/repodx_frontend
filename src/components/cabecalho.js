@@ -15,8 +15,8 @@ function Cabecalho() {
                     <Container>
                         <Link to='/'>
                             <img src={logo_imagem} className="App-logo" alt="logo_imagem" />                            
-                        </Link>
-                        <Navbar.Brand href="/">RepoDX</Navbar.Brand>
+                        </Link>                        
+                        {/* <Navbar.Brand href="/">RepoDX</Navbar.Brand> */}
                         <Nav className="me-auto">
                             <Nav.Link href="/">Home</Nav.Link>
                             <Nav.Link href="/listatecnicas">Técnicas</Nav.Link>                            
