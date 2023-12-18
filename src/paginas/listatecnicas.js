@@ -14,10 +14,14 @@ function ListaTecnicas() {
       <Row>        
         <Cabecalho />
       </Row>
-      <Row className='filtroform'>         
-        <TabelaSearch data={tedxa}/>        
+      <Row className='justify-content-center' >
+        <h2>Lista de Técnicas</h2>
         <BotaoVoltar to='/' text='Voltar'/>
       </Row>
+      <Row className='filtroform'>         
+        <TabelaSearch data={tedxa}/>
+      </Row>
+      
     </Container>
   );
 }

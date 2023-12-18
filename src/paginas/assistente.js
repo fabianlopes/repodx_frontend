@@ -29,9 +29,13 @@ function Assistente() {
 
   return (
 
-    <Container fluid className='filtro'>
+    <Container fluid className='filtroform'>
       <Row>
           <Cabecalho />          
+      </Row>
+      <Row className='justify-content-center' >
+        <h2>Filtro de técnicas - selecione as opções para filtrar</h2>
+        <BotaoVoltar to='/' text='Voltar'/>
       </Row>
       <Row className='w-80 filtroform'>
         <Col xs='8'>
@@ -121,8 +125,7 @@ function Assistente() {
           <div className="form-check shadow bg-light border-primary">            
             <TabelaSearch data={tabelaFiltro}/>
           </div>
-        </Col>
-        <BotaoVoltar to='/' text='Voltar'/>
+        </Col>        
       </Row>
 
     </Container>

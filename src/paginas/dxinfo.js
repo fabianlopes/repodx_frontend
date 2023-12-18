@@ -14,9 +14,13 @@ function DX() {
       <Row>
           <Cabecalho />
       </Row>
-      <Row className="d-flex justify-content-center align-items-center">
-        <div className="d-flex justify-content-center align-items-center vh-50">          
-          <Carousel interval={300000}            
+      <Row className='justify-content-center' >
+        <h2>Informações sobre DX - utilize os botões abaixo da imagem para navegar nos slides</h2>
+        <BotaoVoltar to='/' text='Voltar'/>
+      </Row>
+      <Row className="d-flex justify-content-center align-items-center vh-90">
+        
+        <Carousel interval={300000}            
             variant="dark"
             className="d-block vh-50"
             controls={false}
@@ -33,11 +37,8 @@ function DX() {
               </Carousel.Item>
               ))}              
           </Carousel>
-        </div>        
-      </Row>
-      <Row>
-        <BotaoVoltar to='/' text='Voltar'/>
-      </Row>
+        
+      </Row>      
     </Container>
 
   );

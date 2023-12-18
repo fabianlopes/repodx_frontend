@@ -63,6 +63,10 @@ function RoboDex() {
       <Row>
           <Cabecalho />        
       </Row>
+      <Row className='justify-content-center' >
+        <p>Asistente de recomendação - Responda as questões e envie as respostas para obter as sugestões de técnicas</p>
+        <BotaoVoltar to='/' text='Voltar'/>
+      </Row>
       <Row>
           <Form onSubmit={handleSubmit}>          
             <Carousel
@@ -235,7 +239,7 @@ function RoboDex() {
                     </ToggleButtonGroup>
               </Carousel.Item>
             </Carousel>            
-            <BotaoVoltar to='/' text='Voltar'/>
+
             <div className='carousel-images-container' >
               <div className="overlay-image-esquerda">
                 <img

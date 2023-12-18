@@ -178,6 +178,13 @@ input[type="radio"] {
 }
 
 
+.navbar .nav-link:hover {
+  color: #f9fbfd; /* Altere para a cor desejada durante o hover */
+  background-color: #51b9f5; /* Adicione um fundo transparente ou altere conforme necessário */
+}
+
+
+
 .title {
   font-size: 4rem;
   font-family: fantasy;
@@ -263,19 +270,40 @@ input[type="radio"] {
 
 .dxinfo-box {
   width: 1200px;
-  height: 597px;
+  height: 500px;
   margin: auto;
+  align-items: center;
 }
 
+.inicio {
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-size: 2rem;
+  margin: auto;
+  align-items: center;
+}
+
+.inicio h1 {
+  font-size: 3rem;
+  font-weight: bold;
+  
+}
+
+.inicio h2 {
+  font-size: 2rem;  
+  font-weight: bolder;
+}
 
 .home {
   background-color: #ffffff;
-  /* background-image: url('./imagens/CicloDX.png'); */
-  height: 100vh;
-  width: 100%;
-  background-repeat: repeat;
-  background-size: 15% auto;
-  overflow: hidden;
+  height: 95vh;
+  width: 95%;
+  color: #110101;
+  opacity: 1;
+  border: 2xp solid;
+  border-radius: 10px;
+  box-shadow: 10px 10px 5px #888;
+  font-family: monospace;
+  text-align: center;
 }
 
 .home::before {
@@ -286,7 +314,7 @@ input[type="radio"] {
   height: 100%;
   top: 0;
   left: 0;
-  background-color: rgba(133, 143, 231, 0.5);
+  background-color: rgba(222, 224, 240, 0.5);
 }
 
 .home .carousel {
@@ -301,7 +329,6 @@ input[type="radio"] {
 
 .robodex {
   background-color: #ffffff;
-  background-image: url('./imagens/CicloDX.png');
   height: 100vh;
   width: 100%;
   background-repeat: repeat;
@@ -337,9 +364,7 @@ input[type="radio"] {
   margin-right: auto;
 }
 
-
 .grupobotoestg {
-
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -370,7 +395,6 @@ input[type="radio"] {
 
 .filtro {
   background-color: #ffffff;
-  background-image: url('./imagens/CicloDX.png');
   height: 100vh;
   width: 100%;
   background-repeat: repeat;
@@ -409,6 +433,8 @@ input[type="radio"] {
   color: #ffffff;
   position: relative;
   z-index: 1;
+  width: 150px;
+  height: 40px;
 }
 
 .imagem-enviar {

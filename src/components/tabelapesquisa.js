@@ -27,14 +27,16 @@ function TabelaSearch({ data }) {
             <tr>
               <th>ID</th>
               <th>Nome</th>
+              <th style={{ width: '40%' }}>Resumo</th>
             </tr>
           </thead>
           <tbody>
             {filteredData.map((row, index) => {
               return (
                 <tr key={index} data-toogle="tooltip" title={row.resumo}>                
-                  <td><Link to={`/tecnica/${row.ID}`} target='_blank'>{row.ID}</Link></td>                
-                <td>{row.nome}</td>
+                  <td><Link to={`/tecnica/${row.ID}`} target='_blank'>{row.ID}</Link></td>
+                  <td><Link to={`/tecnica/${row.ID}`} target='_blank'>{row.nome}</Link></td>
+                  <td>{row.resumo}</td>
                 </tr>
                 );
             })}

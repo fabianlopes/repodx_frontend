@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 function BotaoVoltar({ to, text }) {
   return (
-    <Button className='botaovoltar' as={Link} to={to}>
+    <Button className='botaovoltar' as={Link} to={to}>      
       {text}
     </Button>
   );
