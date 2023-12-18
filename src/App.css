@@ -413,14 +413,9 @@ input[type="radio"] {
 }
 
 .filtroform {
-  position: relative;
-  z-index: 1;
-  border: 2xp solid;
-  border-radius: 10px;
-  box-shadow: 10px 10px 5px #888;
+  position: absolute;
+  z-index: 1;  
   text-align: justify;
-  background-color: #ffffff;
-
 }
 
 .negrito {
@@ -458,20 +453,20 @@ input[type="radio"] {
 }
 
 .overlay-image-esquerda {
-  position: absolute;
+  position: relative;
   top: 25px;
   left: 20px;
 }
 
 .overlay-image-direita {
-  position: absolute;
+  position: relative;
   top: 25px;
   right: 20px;
 }
 
 .buttonclick {
   position: absolute;
-  left: 50%;
+  left: 10%;
   top: 70%;
   transform: translateX(-50%) translateY(-50%);
   display: flex;
@@ -547,4 +542,29 @@ input[type="radio"] {
 
     }
 }
+
+.carousel-indicators {
+  display: none; /* Oculta os indicadores inferiores */
+}
+
+.selected-options {
+  margin-top: 20px;
+}
+
+.selected-options strong {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.selected-options ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.selected-options li {
+  margin-bottom: 5px;
+}
+
+
 
