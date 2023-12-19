@@ -548,7 +548,7 @@ input[type="radio"] {
 }
 
 .selected-options {
-  margin-top: 20px;
+  margin-top: 5px;
 }
 
 .selected-options strong {
@@ -565,6 +565,17 @@ input[type="radio"] {
 .selected-options li {
   margin-bottom: 5px;
 }
+
+.horizontal-list {
+  display: flex;
+  list-style-type: none;
+  padding: 0;
+}
+
+.horizontal-list li {
+  margin-right: 10px;
+}
+
 
 
 

@@ -3,6 +3,7 @@ import { Container, Row, Col, Modal, Button, Form, Carousel, ToggleButton, Toggl
 import Cabecalho from '../components/cabecalho';
 import { Link } from 'react-router-dom';
 import tedxa from '../data/TEDXA.json';
+import tagdx from '../data/TAGDX.json';
 import Tabela from '../components/tabelasempesquisa';
 import imagem_assistente from '../imagens/robodex-semfala.png';
 import balao from '../imagens/balao-aberto.png';
@@ -15,11 +16,24 @@ function RoboDex() {
   const [tabelaFiltro, setTabelaFiltro] = useState([]);
   const [selectedOptions, setSelectedOptions] = useState([]);
   const tecnicas = tedxa;
+  const optionDescriptions = tagdx;
   
   function handleChange(event) {
     const { value, checked } = event.target;
 
-    if (checked) {
+    setFormData((prevData) => {
+      if (checked) {
+        return {
+          ...prevData,
+          [value]: true,
+        };
+      } else {
+        const { [value]: removedOption, ...updatedFormData } = prevData;
+        return updatedFormData;
+      }
+    });
+
+    /*if (checked) {
       setFormData({
         ...formData,
         [event.target.value]: event.target.value
@@ -28,7 +42,7 @@ function RoboDex() {
       const updatedFormData = { ...formData };
       delete updatedFormData[value];
       setFormData(updatedFormData);
-    }
+    }*/
 
     const checkboxValue = Object.keys(formData).filter(value => formData[value]);
     setSelectedOptions(checkboxValue);
@@ -269,18 +283,18 @@ function RoboDex() {
         </Col>        
       </Row>
       <Row>
-        <Col>          
+        
           {selectedOptions.length > 0 && (
             <div className="selected-options">
               <strong>Opções Selecionadas:</strong>
-              <ul>
+              <ul className="horizontal-list">
                 {selectedOptions.map((option, index) => (
-                  <li key={index}>{option}</li>
+                  <li key={index}>{optionDescriptions[option]}</li>                  
                 ))}
               </ul>
             </div>
           )}
-        </Col>
+        
       </Row>
 
       <Modal show={showModal} onHide={handleClose}>
