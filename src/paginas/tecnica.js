@@ -1,7 +1,7 @@
 import React from 'react';
 import { Container, Row, Col, ListGroup } from 'react-bootstrap';
 import Cabecalho from '../components/cabecalho';
-import { Link, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import tedax from '../data/TEDXA.json';
 import ZoomableImage from '../components/zoomimagem';
 import BotaoVoltar from '../components/botaovoltar';
@@ -10,14 +10,24 @@ function Tecnica() {
 
   const { id } = useParams();
   const tecnica = tedax.filter(Item => Item.ID === id);  
+  const [currentTecnica] = tedax.filter(Item => Item.ID === id);
   
   return (
-    <Container fluid className='filtro'>        
+    <Container fluid className='filtroform'>        
         <Row>        
             <Cabecalho/>
         </Row>
+        <Row>
+            <Col xs={10}>
+                <h1>{tecnica[0].ID} - {tecnica[0].nome}</h1>
+            </Col>
+            <Col xs={2}>
+                <BotaoVoltar to='/listatecnicas' text='Voltar'/>
+            </Col>
+            
+        </Row>
         <Row className='filtroform'>
-            <h1 className='text-center'>{tecnica[0].ID} - {tecnica[0].nome}</h1>            
+            
             <Col xs={6}>
                 <h3 className="pb-2 border-bottom border-top" style={{boxShadow: "inset 0 -8px 8px -8px rgba(0, 0, 0, 0.5)"}}>Resumo</h3>
                 <p>{tecnica[0].resumo}</p>
@@ -35,15 +45,14 @@ function Tecnica() {
                 <p>{tecnica[0].contexto}</p>                
             </Col>
             <Col xs={6}>
-                <h3 className="pb-2 border-bottom border-top" style={{boxShadow: "inset 0 -8px 8px -8px rgba(0, 0, 0, 0.5)"}}>Artefato</h3>
+                <h3 className="pb-2 border-bottom border-top" style={{boxShadow: "inset 0 -8px 8px -8px rgba(0, 0, 0, 0.5)"}}>Artefato (clique para zoom)</h3>
                 <p className='text-center'><ZoomableImage src={tecnica[0].imagem} /> </p>
                 <h3 className="pb-2 border-bottom border-top" style={{boxShadow: "inset 0 -8px 8px -8px rgba(0, 0, 0, 0.5)"}}>Referências</h3>
                 <p>{tecnica[0].referencia}</p>
                 <h3 className="pb-2 border-bottom border-top" style={{boxShadow: "inset 0 -8px 8px -8px rgba(0, 0, 0, 0.5)"}}>Links</h3>
-                <p>Template: <Link>{tecnica[0].template}</Link></p>
-                <p>Artigo exemplo: <Link>{tecnica[0].artigo}</Link></p>
-            </Col>
-            <BotaoVoltar to='/listatecnicas' text='Voltar'/>
+                <p>Template: {currentTecnica.template && <a href={currentTecnica.template} target="_blank" rel="noopener noreferrer">{currentTecnica.template}</a>}</p>
+                <p>Artigo exemplo: {currentTecnica.artigo && <a href={currentTecnica.artigo} target="_blank" rel="noopener noreferrer">{currentTecnica.artigo}</a>}</p>
+            </Col>            
         </Row>
         
     </Container>

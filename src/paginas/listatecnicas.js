@@ -10,7 +10,7 @@ function ListaTecnicas() {
   
   return (    
 
-    <Container fluid className='home'>
+    <Container fluid className='filtroform'>
       <Row>        
         <Cabecalho />
       </Row>
@@ -18,7 +18,7 @@ function ListaTecnicas() {
         <h2>Lista de Técnicas</h2>
         <BotaoVoltar to='/' text='Voltar'/>
       </Row>
-      <Row className='filtroform'>         
+      <Row>         
         <TabelaSearch data={tedxa}/>
       </Row>
       

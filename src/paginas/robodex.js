@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Container, Row, Col, Modal, Button, Form, Carousel, ToggleButton, ToggleButtonGroup } from 'react-bootstrap';
+import { Container, Row, Col, Modal, Button, Form, Carousel } from 'react-bootstrap';
 import Cabecalho from '../components/cabecalho';
 import { Link } from 'react-router-dom';
 import tedxa from '../data/TEDXA.json';
@@ -14,58 +14,37 @@ function RoboDex() {
   const [formData, setFormData] = useState({});
   const [showModal, setShowModal] = useState(false);
   const [tabelaFiltro, setTabelaFiltro] = useState([]);
+  const [activeIndex, setActiveIndex] = useState(0);
   const [selectedOptions, setSelectedOptions] = useState([]);
   const tecnicas = tedxa;
   const optionDescriptions = tagdx;
+
+  const handleChange = (value) => {
+    if (selectedOptions.includes(value)) {      
+      setSelectedOptions((prevOptions) => prevOptions.filter(option => option !== value));
+    } else {      
+      setFormData({ [value]: true });
+      setSelectedOptions((prevOptions) => [...prevOptions, value]);
+    }
+  };
   
-  function handleChange(event) {
-    const { value, checked } = event.target;
+  const handleButtonClick = (value) => {
+    handleChange(value);
+    //handleNext();
+  };
 
-    setFormData((prevData) => {
-      if (checked) {
-        return {
-          ...prevData,
-          [value]: true,
-        };
-      } else {
-        const { [value]: removedOption, ...updatedFormData } = prevData;
-        return updatedFormData;
-      }
-    });
-
-    /*if (checked) {
-      setFormData({
-        ...formData,
-        [event.target.value]: event.target.value
-      });
-    } else if (formData[value]) {      
-      const updatedFormData = { ...formData };
-      delete updatedFormData[value];
-      setFormData(updatedFormData);
-    }*/
-
-    const checkboxValue = Object.keys(formData).filter(value => formData[value]);
-    setSelectedOptions(checkboxValue);
-
-  } 
+  /*const handleNext = () => {
+    setActiveIndex(activeIndex + 1);
+  };*/
 
   const handleSubmit = (event) => {
     event.preventDefault();    
 
-    console.log('form:')
-    console.log(formData)
-    
     const checkboxValue = Object.keys(formData).filter(value => formData[value]);
-
-    console.log('check:')
-    console.log(checkboxValue);
 
     const tecnicasFiltro = tecnicas.filter(tecnica => {
       return tecnica.tags.some(tag => checkboxValue.includes(tag));
     });
-
-    console.log('tecnica:')
-    console.log(tecnicasFiltro);
 
     setTabelaFiltro(tecnicasFiltro);
     setShowModal(true);
@@ -102,13 +81,14 @@ function RoboDex() {
                 alt="balao"
                 className="img-fluid imagem-balao"
               />
-            </div>
-            <Button onClick={handleSubmit} className='buttonclick'>ENVIAR</Button>
+            </div>           
           </Col>
           <Col sm={10}>
             <Form onSubmit={handleSubmit}>          
               <Carousel
-              interval={300000}
+              interval={null}
+              activeIndex={activeIndex}
+              onSelect={(index) => setActiveIndex(index)}
               variant="dark"
               className="d-block vh-50"
               slide={false}
@@ -122,160 +102,318 @@ function RoboDex() {
                   </div>
                 </Carousel.Item>
                 <Carousel.Item>
-                      <label>
-                        <h2>O que você quer avaliar?</h2>
-                      </label>
-                      <ToggleButtonGroup type="checkbox"  className='grupobotoestg' >
-                        <ToggleButton type='checkbox' className='botoestg' id="tag01" name="tag01" value="tag01" onChange={handleChange} >
-                          Emoções, humor e sentimentos durante o desenvolvimento de software
-                        </ToggleButton>                      
-                        <ToggleButton type='checkbox' className='botoestg' id="tag02" name="tag02" value="tag02" onChange={handleChange} >
-                          Emoções, humor e sentimentos após o desenvolvimento de software
-                        </ToggleButton>                      
-                        <ToggleButton type='checkbox' className='botoestg' id="tag03" name="tag03" value="tag03" onChange={handleChange} >
-                          Emoções, humor e sentimentos durante as mudanças de atividade/tarefa
-                        </ToggleButton>
-                        <ToggleButton type='checkbox' className='botoestg' id="tag04" name="tag24" value="tag04" onChange={handleChange} >
-                          Emoções, humor e sentimentos durante o aprendizado de novas tecnologias
-                        </ToggleButton>
-                        <ToggleButton type='checkbox' className='botoestg' id="tag30" name="tag30" value="tag30" onChange={handleChange} >
-                          Emoções, humor e sentimentos durante o uso de uma ferramenta, tecnologia ou metodologia
-                        </ToggleButton>                      
-                        <ToggleButton type='checkbox' className='botoestg' id="tag28" name="tag28" value="tag28" onChange={handleChange} >
-                          Emoções, humor e sentimentos durante elogios, perdas, acidentes ou em ambientes hostis
-                        </ToggleButton>
-                      </ToggleButtonGroup>
+                  <label>
+                    <h2>O que você quer avaliar?</h2>
+                  </label>
+                  <div className='grupobotoestg'>
+                      <Button
+                        className='botoestg'
+                        id='tag01'
+                        name='tag01'
+                        value='tag01'
+                        onClick={() => handleButtonClick('tag01')}
+                      >
+                      Emoções, humor e sentimentos durante o desenvolvimento de software
+                      </Button>
+                      <Button
+                        className='botoestg'
+                        id='tag02'
+                        name='tag02'
+                        value='tag02'
+                        onClick={() => handleButtonClick('tag02')}
+                      >
+                      Emoções e humor após o desenvolvimento de software
+                      </Button>
+                      <Button
+                        className='botoestg'
+                        id='tag03'
+                        name='tag03'
+                        value='tag03'
+                        onClick={() => handleButtonClick('tag03')}
+                      >
+                      Emoções, humor e sentimentos durante as mudanças de atividade/tarefa
+                      </Button>
+                      <Button
+                        className='botoestg'
+                        id='tag24'
+                        name='tag24'
+                        value='tag24'
+                        onClick={() => handleButtonClick('tag24')}
+                      >
+                      Emoções, humor e sentimentos durante o aprendizado de novas tecnologias
+                      </Button>
+                      <Button
+                        className='botoestg'
+                        id='tag30'
+                        name='tag30'
+                        value='tag30'
+                        onClick={() => handleButtonClick('tag30')}
+                      >
+                      Emoções, humor e sentimentos durante o uso de uma ferramenta, tecnologia ou metodologia
+                      </Button>
+                      <Button
+                        className='botoestg'
+                        id='tag28'
+                        name='tag28'
+                        value='tag28'
+                        onClick={() => handleButtonClick('tag28')}
+                      >
+                      Emoções, humor e sentimentos durante elogios, perdas, acidentes ou em ambientes hostis
+                      </Button>
+                  
+                </div>                
                 </Carousel.Item>
                 <Carousel.Item>
                       <label>
                         <h2>Qual atividade você quer avaliar?</h2>
                       </label>
-                      <ToggleButtonGroup type="checkbox" className='grupobotoestg'>
-                        <ToggleButton type='checkbox' className='botoestg' id="tag05" name="tag05" value="tag05" onChange={handleChange} >
-                          Atividades com reuniões
-                        </ToggleButton>
-                        <ToggleButton type='checkbox' className='botoestg' id="tag06" name="tag06" value="tag06" onChange={handleChange} >
-                          Atividades com muitas intervenções/estímulos
-                        </ToggleButton>
-                        <ToggleButton type='checkbox' className='botoestg' id="tag07" name="tag07" value="tag07" onChange={handleChange} >
-                          Atividades com muitas alterações de atividades/tarefas
-                        </ToggleButton>
-                        <ToggleButton type='checkbox' className='botoestg' id="tag08" name="tag08" value="tag08" onChange={handleChange} >
-                          Atividades que envolvam tecnologias móveis
-                        </ToggleButton>
-                        <ToggleButton type='checkbox' className='botoestg' id="tag09" name="tag09" value="tag09" onChange={handleChange} >
-                          Atividades que envolvam aprendizado de máquina
-                        </ToggleButton>
-                        <ToggleButton type='checkbox' className='botoestg' id="tag04" name="tag04" value="tag04" onChange={handleChange} >
-                          Atividades que envolvam requisitos
-                        </ToggleButton>
-                      </ToggleButtonGroup>
+                      <div className='grupobotoestg'>
+                        <Button
+                          className='botoestg'
+                          id='tag05'
+                          name='tag05'
+                          value='tag05'
+                          onClick={() => handleButtonClick('tag05')}
+                        >
+                        Atividades com reuniões
+                        </Button>
+                        <Button
+                          className='botoestg'
+                          id='tag06'
+                          name='tag06'
+                          value='tag06'
+                          onClick={() => handleButtonClick('tag06')}
+                        >
+                        Atividades com muitas intervenções/estímulos
+                        </Button>
+                        <Button
+                          className='botoestg'
+                          id='tag07'
+                          name='tag07'
+                          value='tag07'
+                          onClick={() => handleButtonClick('tag07')}
+                        >
+                        Atividades com muitas alterações de atividades/tarefas
+                        </Button>
+                        <Button
+                          className='botoestg'
+                          id='tag08'
+                          name='tag08'
+                          value='tag08'
+                          onClick={() => handleButtonClick('tag08')}
+                        >
+                        Atividades que envolvam tecnologias móveis
+                        </Button>
+                        <Button
+                          className='botoestg'
+                          id='tag09'
+                          name='tag09'
+                          value='tag09'
+                          onClick={() => handleButtonClick('tag09')}
+                        >
+                        Atividades que envolvam aprendizado de máquina
+                        </Button>
+                        <Button
+                          className='botoestg'
+                          id='tag04'
+                          name='tag04'
+                          value='tag04'
+                          onClick={() => handleButtonClick('tag04')}
+                        >
+                        Atividades que envolvam requisitos
+                        </Button>
+                      </div>
                 </Carousel.Item>
                 <Carousel.Item>
                       <label>
                       <h2>Como você vai realizar a avaliação? </h2>
                       </label>
-                      <ToggleButtonGroup type="checkbox"  className='grupobotoestg'>
-                        <ToggleButton type='checkbox' className='botoestg' id="tag10" name="tag10" value="tag10" onChange={handleChange}>
-                          Usando autoavaliações pelos próprios participantes
-                        </ToggleButton>
-                        <ToggleButton type='checkbox' className='botoestg' id="tag12" name="tag12" value="tag12" onChange={handleChange}>
-                          Usando áudios/gravações
-                        </ToggleButton>
-                        <ToggleButton type='checkbox' className='botoestg' id="tag15" name="tag15" value="tag15" onChange={handleChange}>
-                          Usando questionários
-                        </ToggleButton>
-                        <ToggleButton type='checkbox' className='botoestg' id="tag16" name="tag16" value="tag16" onChange={handleChange}>
-                          Usando entrevistas
-                        </ToggleButton>
-                        <ToggleButton type='checkbox' className='botoestg' id="tag17" name="tag17" value="tag17" onChange={handleChange}>
-                          Usando mineração de dados (bases de texto, emails, sites de perguntas e respostas, fóruns etc)
-                        </ToggleButton>
-                      </ToggleButtonGroup>
+                      <div className='grupobotoestg'>
+                        <Button
+                          className='botoestg'
+                          id='tag10'
+                          name='tag10'
+                          value='tag10'
+                          onClick={() => handleButtonClick('tag10')}
+                        >
+                        Usando autoavaliações pelos próprios participantes
+                        </Button>
+                        <Button
+                          className='botoestg'
+                          id='tag12'
+                          name='tag12'
+                          value='tag12'
+                          onClick={() => handleButtonClick('tag12')}
+                        >
+                        Usando áudios/gravações
+                        </Button>
+                        <Button
+                          className='botoestg'
+                          id='tag15'
+                          name='tag15'
+                          value='tag15'
+                          onClick={() => handleButtonClick('tag15')}
+                        >
+                        Usando questionários
+                        </Button>
+                        <Button
+                          className='botoestg'
+                          id='tag16'
+                          name='tag16'
+                          value='tag16'
+                          onClick={() => handleButtonClick('tag16')}
+                        >
+                        Usando entrevistas
+                        </Button>
+                        <Button
+                          className='botoestg'
+                          id='tag17'
+                          name='tag17'
+                          value='tag17'
+                          onClick={() => handleButtonClick('tag17')}
+                        >
+                        Usando mineração de dados (bases de texto, emails, sites de perguntas e respostas, fóruns etc)
+                        </Button>
+                      </div>
+                      
                 </Carousel.Item>
-                <Carousel.Item>
-                      <label>
-                          <h2>Qual o número de participantes da avaliação de DX?</h2>
-                          (pode ser respondido com o número provável de colaboradores da organização)
-                      </label>
-                      <ToggleButtonGroup type="radio" name="tagnumero" className='grupobotoestg'>
-                        <ToggleButton type='radio' className='botoestg' id='1' value={1} onChange={handleChange}>
-                          1 - 50
-                        </ToggleButton>
-                        <ToggleButton type='radio' className='botoestg' id='51' value={51} onChange={handleChange}>
-                          51 - 100
-                        </ToggleButton>
-                        <ToggleButton type='radio' className='botoestg' id='101' value={101} onChange={handleChange}>
-                          101 - 1000
-                        </ToggleButton>
-                        <ToggleButton type='radio' className='botoestg' id='1001' value={1001} onChange={handleChange}>
-                          Acima de 1000
-                        </ToggleButton>
-                      </ToggleButtonGroup>
-                </Carousel.Item>
+                
                 <Carousel.Item>
                       <label>
                           <h2>Qual o nível de experiência profissional dos participantes da avaliação de DX?</h2>
                       </label>
-                      <ToggleButtonGroup type="checkbox"  className='grupobotoestg'>                      
-                        <ToggleButton type='checkbox' className='botoestg' id="tag18" name="tag18" value="tag18" onChange={handleChange}>
-                          Iniciante (até 3 anos)
-                        </ToggleButton>
-                        <ToggleButton type='checkbox' className='botoestg' id="tag19" name="tag19" value="tag19" onChange={handleChange}>
-                          Experiente (3 a 5 anos)
-                        </ToggleButton>
-                        <ToggleButton type='checkbox' className='botoestg' id="tag20" name="tag20" value="tag20" onChange={handleChange}>
-                          Especialista (acima de 5 anos)
-                        </ToggleButton>
-                      </ToggleButtonGroup>
+                      <div className='grupobotoestg'>
+                        <Button
+                          className='botoestg'
+                          id='tag18'
+                          name='tag18'
+                          value='tag18'
+                          onClick={() => handleButtonClick('tag18')}
+                        >
+                        Iniciante (até 3 anos)
+                        </Button>
+                        <Button
+                          className='botoestg'
+                          id='tag19'
+                          name='tag19'
+                          value='tag19'
+                          onClick={() => handleButtonClick('tag19')}
+                        >
+                        Experiente (3 a 5 anos)
+                        </Button>
+                        <Button
+                          className='botoestg'
+                          id='tag20'
+                          name='tag20'
+                          value='tag20'
+                          onClick={() => handleButtonClick('tag20')}
+                        >
+                        Especialista (acima de 5 anos)
+                        </Button>
+                      </div>
+
                 </Carousel.Item>
                 <Carousel.Item>
                       <label>
                           <h2>A avaliação de DX vai ser realizada de que forma?</h2>
                       </label>
-                      <ToggleButtonGroup type="radio" name='tagforma' className='grupobotoestg'>
-                        <ToggleButton className='botoestg' type='radio' id="tagr1" value="tag21" onChange={handleChange}>
-                          Remotamente
-                        </ToggleButton>
-                        <ToggleButton className='botoestg' type='radio' id="tagr2" value="tag22" onChange={handleChange}>
-                          Presencial
-                        </ToggleButton>
-                        <ToggleButton className='botoestg' type='radio' id="tagr3" value="tag23" onChange={handleChange}>
-                          Híbrida
-                        </ToggleButton>
-                      </ToggleButtonGroup>
+                      <div className='grupobotoestg'>
+                        <Button
+                          className='botoestg'
+                          id='tag21'
+                          name='tag21'
+                          value='tag21'
+                          onClick={() => handleButtonClick('tag21')}
+                        >
+                        Remotamente
+                        </Button>
+                        <Button
+                          className='botoestg'
+                          id='tag22'
+                          name='tag22'
+                          value='tag22'
+                          onClick={() => handleButtonClick('tag22')}
+                        >
+                        Presencial
+                        </Button>
+                        <Button
+                          className='botoestg'
+                          id='tag23'
+                          name='tag23'
+                          value='tag23'
+                          onClick={() => handleButtonClick('tag23')}
+                        >
+                        Híbrida
+                        </Button>
+                      </div>
                 </Carousel.Item>
                 <Carousel.Item>
                       <label>
                           <h2>Qual o ambiente da avaliação?</h2>
                       </label>
-                      <ToggleButtonGroup type="checkbox"  className='grupobotoestg'>
-                        <ToggleButton type='checkbox' className='botoestg' id="tag13" name="tag13" value="tag13" onChange={handleChange}>
-                          Academia
-                        </ToggleButton>
-                        <ToggleButton type='checkbox' className='botoestg' id="tag14" name="tag14" value="tag14" onChange={handleChange}>
-                          Indústria
-                        </ToggleButton>
-                      </ToggleButtonGroup>
+                      <div className='grupobotoestg'>
+                        <Button
+                          className='botoestg'
+                          id='tag13'
+                          name='tag13'
+                          value='tag13'
+                          onClick={() => handleButtonClick('tag13')}
+                        >
+                        Academia
+                        </Button>
+                        <Button
+                          className='botoestg'
+                          id='tag14'
+                          name='tag14'
+                          value='tag14'
+                          onClick={() => handleButtonClick('tag14')}
+                        >
+                        Indústria
+                        </Button>
+                      </div>
                 </Carousel.Item>
                 <Carousel.Item>
                       <label>
                         <h2>Você quer avaliar uma emoção, humor ou sentimento específico?</h2>
                       </label>
-                      <ToggleButtonGroup type="checkbox"  className='grupobotoestg' >
-                        <ToggleButton type='checkbox' className='botoestg' id="tag26" name="tag26" value="tag26" onChange={handleChange} >
-                          Felicidade
-                        </ToggleButton>                      
-                        <ToggleButton type='checkbox' className='botoestg' id="tag27" name="tag27" value="tag27" onChange={handleChange} >
-                          Valência, excitação ou dominância
-                        </ToggleButton>
-                        <ToggleButton type='checkbox' className='botoestg' id="tag29" name="tag29" value="tag29" onChange={handleChange} >
-                          Profundidade, foco, concentração e agradabilidade
-                        </ToggleButton>
-                        <ToggleButton type='checkbox' className='botoestg' id="tag30" name="tag30" value="tag30" onChange={handleChange} >
-                          Tédio, ansiedade, confusão, curiosidade, raiva, excitação, esperança, frustração, interesse, orgulho, surpresa, vergonha, alívio
-                        </ToggleButton>
-                      </ToggleButtonGroup>
+                      <div className='grupobotoestg'>
+                        <Button
+                          className='botoestg'
+                          id='tag26'
+                          name='tag26'
+                          value='tag26'
+                          onClick={() => handleButtonClick('tag26')}
+                        >
+                        Felicidade
+                        </Button>
+                        <Button
+                          className='botoestg'
+                          id='tag27'
+                          name='tag27'
+                          value='tag27'
+                          onClick={() => handleButtonClick('tag27')}
+                        >
+                        Valência, excitação ou dominância
+                        </Button>
+                        <Button
+                          className='botoestg'
+                          id='tag29'
+                          name='tag29'
+                          value='tag29'
+                          onClick={() => handleButtonClick('tag29')}
+                        >
+                        Profundidade, foco, concentração e agradabilidade
+                        </Button>
+                        <Button
+                          className='botoestg'
+                          id='tag30'
+                          name='tag30'
+                          value='tag30'
+                          onClick={() => handleButtonClick('tag30')}
+                        >
+                        Tédio, ansiedade, confusão, curiosidade, raiva, excitação, esperança, frustração, interesse, orgulho, surpresa, vergonha, alívio
+                        </Button>
+                      </div>                      
                 </Carousel.Item>                
               </Carousel>
 
@@ -283,10 +421,13 @@ function RoboDex() {
         </Col>        
       </Row>
       <Row>
-        
+        <Col xs={2}>
+          <Button onClick={handleSubmit} className='buttonclick'>ENVIAR</Button>
+        </Col>
+        <Col xs={10}>
           {selectedOptions.length > 0 && (
             <div className="selected-options">
-              <strong>Opções Selecionadas:</strong>
+              <strong>Opções Selecionadas (selecione novamente para remover):</strong>
               <ul className="horizontal-list">
                 {selectedOptions.map((option, index) => (
                   <li key={index}>{optionDescriptions[option]}</li>                  
@@ -294,7 +435,7 @@ function RoboDex() {
               </ul>
             </div>
           )}
-        
+        </Col>
       </Row>
 
       <Modal show={showModal} onHide={handleClose}>

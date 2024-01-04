@@ -370,6 +370,7 @@ input[type="radio"] {
   justify-content: center;
   max-width: 700px;
   margin: 0 auto;
+  margin-bottom: 10px;
   
 }
 
@@ -575,7 +576,3 @@ input[type="radio"] {
 .horizontal-list li {
   margin-right: 10px;
 }
-
-
-
-
