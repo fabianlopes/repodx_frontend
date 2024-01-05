@@ -15,7 +15,7 @@ function DX() {
           <Cabecalho />
       </Row>
       <Row className='justify-content-center' >
-        <h2>Informações sobre DX - utilize os botões abaixo da imagem para navegar nos slides</h2>
+        <h2>Informações sobre DX teste - utilize os botões abaixo da imagem para navegar nos slides</h2>
         <BotaoVoltar to='/' text='Voltar'/>
       </Row>
       <Row className="d-flex justify-content-center align-items-center vh-90">
