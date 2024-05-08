@@ -60,7 +60,7 @@ function RoboDex() {
       </Row>
       <Row>
         <Col xs={10}>
-          <h2>Asistente de recomendação - Responda as questões e use o botão ENVIAR para obter as sugestões de técnicas</h2>
+          <h2>Assistente de recomendação - Responda as questões e use o botão ENVIAR para obter as sugestões de técnicas</h2>
         </Col>
         <Col xs={2}>
           <BotaoVoltar to='/' text='Voltar'/>
