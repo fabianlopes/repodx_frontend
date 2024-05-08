@@ -1,12 +1,10 @@
 import React, { useState } from 'react';
-import { Container, Row, Col, Modal, Button, Form, Carousel } from 'react-bootstrap';
+import { Container, Row, Col, Modal, Button, ToggleButton, ToggleButtonGroup, Form, Carousel } from 'react-bootstrap';
 import Cabecalho from '../components/cabecalho';
 import { Link } from 'react-router-dom';
 import tedxa from '../data/TEDXA.json';
 import tagdx from '../data/TAGDX.json';
 import Tabela from '../components/tabelasempesquisa';
-import imagem_assistente from '../imagens/robodex-semfala.png';
-import balao from '../imagens/balao-aberto.png';
 import BotaoVoltar from '../components/botaovoltar';
 
 function RoboDex() {
@@ -56,34 +54,20 @@ function RoboDex() {
   
   return (
 
-    <Container fluid className='home'>
+    <Container fluid className='dxinfo-box'>
       <Row>
           <Cabecalho />        
       </Row>
       <Row>
         <Col xs={10}>
-          <p>Asistente de recomendação - Responda as questões e envie as respostas para obter as sugestões de técnicas</p>
+          <h2>Asistente de recomendação - Responda as questões e use o botão ENVIAR para obter as sugestões de técnicas</h2>
         </Col>
         <Col xs={2}>
           <BotaoVoltar to='/' text='Voltar'/>
         </Col>        
       </Row>
       <Row>
-          <Col sm={2}>
-            <div className="overlay-image-esquerda">
-              <img
-                src={imagem_assistente}
-                alt="robodex"
-                className="img-fluid imagem-enviar"
-              />
-              <img
-                src={balao}
-                alt="balao"
-                className="img-fluid imagem-balao"
-              />
-            </div>           
-          </Col>
-          <Col sm={10}>
+
             <Form onSubmit={handleSubmit}>          
               <Carousel
               interval={null}
@@ -98,191 +82,262 @@ function RoboDex() {
                       <h1>O que precisamos saber</h1>
                       <p>Aqui precisamos saber informações para poder auxiliar melhor na seleção da técnica de avaliação de DX na aréa afetiva</p>
                       <p>Não lembra o que é DX? clique <Link to='/dxinfo'>AQUI</Link></p>
-                      <h2>Utilize os botões inferiores e as setas laterias para navegação</h2>
+                      <h1>O que você precisa saber</h1>
+                      <p>Utilize os botões laterias para navegação</p>
+                      <p>Ao enviar suas respostas, uma nova tela com a lista de sugestões será apresentada</p>
                   </div>
                 </Carousel.Item>
                 <Carousel.Item>
                   <label>
-                    <h2>O que você quer avaliar?</h2>
+                    <h2>Em qual contexto a DX vai ser avaliada?</h2>
                   </label>
                   <div className='grupobotoestg'>
-                      <Button
-                        className='botoestg'
-                        id='tag01'
-                        name='tag01'
-                        value='tag01'
-                        onClick={() => handleButtonClick('tag01')}
-                      >
-                      Emoções, humor e sentimentos durante o desenvolvimento de software
-                      </Button>
-                      <Button
-                        className='botoestg'
-                        id='tag02'
-                        name='tag02'
-                        value='tag02'
-                        onClick={() => handleButtonClick('tag02')}
-                      >
-                      Emoções e humor após o desenvolvimento de software
-                      </Button>
-                      <Button
-                        className='botoestg'
-                        id='tag03'
-                        name='tag03'
-                        value='tag03'
-                        onClick={() => handleButtonClick('tag03')}
-                      >
-                      Emoções, humor e sentimentos durante as mudanças de atividade/tarefa
-                      </Button>
-                      <Button
-                        className='botoestg'
-                        id='tag24'
-                        name='tag24'
-                        value='tag24'
-                        onClick={() => handleButtonClick('tag24')}
-                      >
-                      Emoções, humor e sentimentos durante o aprendizado de novas tecnologias
-                      </Button>
-                      <Button
-                        className='botoestg'
-                        id='tag30'
-                        name='tag30'
-                        value='tag30'
-                        onClick={() => handleButtonClick('tag30')}
-                      >
-                      Emoções, humor e sentimentos durante o uso de uma ferramenta, tecnologia ou metodologia
-                      </Button>
-                      <Button
-                        className='botoestg'
-                        id='tag28'
-                        name='tag28'
-                        value='tag28'
-                        onClick={() => handleButtonClick('tag28')}
-                      >
-                      Emoções, humor e sentimentos durante elogios, perdas, acidentes ou em ambientes hostis
-                      </Button>
-                  
-                </div>                
-                </Carousel.Item>
-                <Carousel.Item>
-                      <label>
-                        <h2>Qual atividade você quer avaliar?</h2>
-                      </label>
-                      <div className='grupobotoestg'>
-                        <Button
-                          className='botoestg'
-                          id='tag05'
-                          name='tag05'
-                          value='tag05'
-                          onClick={() => handleButtonClick('tag05')}
-                        >
-                        Atividades com reuniões
-                        </Button>
-                        <Button
-                          className='botoestg'
-                          id='tag06'
-                          name='tag06'
-                          value='tag06'
-                          onClick={() => handleButtonClick('tag06')}
-                        >
-                        Atividades com muitas intervenções/estímulos
-                        </Button>
-                        <Button
-                          className='botoestg'
-                          id='tag07'
-                          name='tag07'
-                          value='tag07'
-                          onClick={() => handleButtonClick('tag07')}
-                        >
-                        Atividades com muitas alterações de atividades/tarefas
-                        </Button>
-                        <Button
-                          className='botoestg'
-                          id='tag08'
-                          name='tag08'
-                          value='tag08'
-                          onClick={() => handleButtonClick('tag08')}
-                        >
-                        Atividades que envolvam tecnologias móveis
-                        </Button>
-                        <Button
-                          className='botoestg'
-                          id='tag09'
-                          name='tag09'
-                          value='tag09'
-                          onClick={() => handleButtonClick('tag09')}
-                        >
-                        Atividades que envolvam aprendizado de máquina
-                        </Button>
-                        <Button
-                          className='botoestg'
-                          id='tag04'
-                          name='tag04'
-                          value='tag04'
-                          onClick={() => handleButtonClick('tag04')}
-                        >
-                        Atividades que envolvam requisitos
-                        </Button>
+                    <ToggleButtonGroup type="checkbox">
+                      <div className="row">
+                        <div className="col-2">
+
+                          <ToggleButton
+                            className='botoestg'
+                            id='tag01'
+                            name='tag01'
+                            value='tag01'
+                            onClick={() => handleButtonClick('tag01')}
+                            variant={selectedOptions.includes('tag01') ? 'primary' : 'outline-primary'}
+                          >
+                          Enquanto se desenvolve o software
+                          </ToggleButton>                    
+                          <ToggleButton
+                            className='botoestg'
+                            id='tag02'
+                            name='tag02'
+                            value='tag02'
+                            onClick={() => handleButtonClick('tag02')}
+                            variant={selectedOptions.includes('tag02') ? 'primary' : 'outline-primary'}
+                          >
+                          Após o desenvolvimento do software
+                          </ToggleButton>                    
+                          <ToggleButton
+                            className='botoestg'
+                            id='tag03'
+                            name='tag03'
+                            value='tag03'
+                            onClick={() => handleButtonClick('tag03')}
+                            variant={selectedOptions.includes('tag03') ? 'primary' : 'outline-primary'}
+                          >
+                          Em mudanças de atividades ou tarefas
+                          </ToggleButton>                    
+                          <ToggleButton
+                            className='botoestg'
+                            id='tag30'
+                            name='tag30'
+                            value='tag30'
+                            onClick={() => handleButtonClick('tag30')}
+                            variant={selectedOptions.includes('tag30') ? 'primary' : 'outline-primary'}
+                          >
+                          Uso de uma ferramenta, tecnologia ou metodologia específica
+                          </ToggleButton>                    
+
+                        </div>
                       </div>
-                </Carousel.Item>
-                <Carousel.Item>
-                      <label>
-                      <h2>Como você vai realizar a avaliação? </h2>
-                      </label>
-                      <div className='grupobotoestg'>
-                        <Button
-                          className='botoestg'
-                          id='tag10'
-                          name='tag10'
-                          value='tag10'
-                          onClick={() => handleButtonClick('tag10')}
-                        >
-                        Usando autoavaliações pelos próprios participantes
-                        </Button>
-                        <Button
-                          className='botoestg'
-                          id='tag12'
-                          name='tag12'
-                          value='tag12'
-                          onClick={() => handleButtonClick('tag12')}
-                        >
-                        Usando áudios/gravações
-                        </Button>
-                        <Button
-                          className='botoestg'
-                          id='tag15'
-                          name='tag15'
-                          value='tag15'
-                          onClick={() => handleButtonClick('tag15')}
-                        >
-                        Usando questionários
-                        </Button>
-                        <Button
-                          className='botoestg'
-                          id='tag16'
-                          name='tag16'
-                          value='tag16'
-                          onClick={() => handleButtonClick('tag16')}
-                        >
-                        Usando entrevistas
-                        </Button>
-                        <Button
-                          className='botoestg'
-                          id='tag17'
-                          name='tag17'
-                          value='tag17'
-                          onClick={() => handleButtonClick('tag17')}
-                        >
-                        Usando mineração de dados (bases de texto, emails, sites de perguntas e respostas, fóruns etc)
-                        </Button>
+                      <div className="row">
+                        <div className="col-2">
+
+                          <ToggleButton
+                            className='botoestg'
+                            id='tag24'
+                            name='tag24'
+                            value='tag24'
+                            onClick={() => handleButtonClick('tag24')}
+                            variant={selectedOptions.includes('tag24') ? 'primary' : 'outline-primary'}
+                          >
+                          Aprendizado de novas tecnologias
+                          </ToggleButton>
+                          <ToggleButton
+                            className='botoestg'
+                            id='tag06'
+                            name='tag06'
+                            value='tag06'
+                            onClick={() => handleButtonClick('tag06')}
+                            variant={selectedOptions.includes('tag06') ? 'primary' : 'outline-primary'}
+                          >
+                          Após intervenções ou estímulos
+                          </ToggleButton>                    
+                          <ToggleButton
+                            className='botoestg'
+                            id='tag28'
+                            name='tag28'
+                            value='tag28'
+                            onClick={() => handleButtonClick('tag28')}
+                            variant={selectedOptions.includes('tag28') ? 'primary' : 'outline-primary'}
+                          >
+                          Efeitos afetivos (elogios, perdas, acidentes ou em ambientes hostis)
+                          </ToggleButton>                    
+                          <ToggleButton
+                            className='botoestg'
+                            id='tag31'
+                            name='tag31'
+                            value='tag31'
+                            onClick={() => handleButtonClick('tag31')}
+                            variant={selectedOptions.includes('tag31') ? 'primary' : 'outline-primary'}
+                          >
+                          Influência e impacto dos estados afetivos (qualidade, produtividade, desempenho, performance)
+                          </ToggleButton>                    
+                        </div>
                       </div>
+                      <div className="row">
+                        <div className="col-2">
                       
+                          <ToggleButton
+                            className='botoestg'
+                            id='tag08'
+                            name='tag08'
+                            value='tag08'
+                            onClick={() => handleButtonClick('tag08')}
+                            variant={selectedOptions.includes('tag08') ? 'primary' : 'outline-primary'}
+                          >
+                          Pesquisa sobre tecnologia móveis
+                          </ToggleButton>                    
+                          <ToggleButton
+                            className='botoestg'
+                            id='tag09'
+                            name='tag09'
+                            value='tag09'
+                            onClick={() => handleButtonClick('tag09')}
+                            variant={selectedOptions.includes('tag09') ? 'primary' : 'outline-primary'}
+                          >
+                          Projetos de desenvolvimento de tecnologias de DL
+                          </ToggleButton>                    
+                          <ToggleButton
+                            className='botoestg'
+                            id='tag04'
+                            name='tag04'
+                            value='tag04'
+                            onClick={() => handleButtonClick('tag04')}
+                            variant={selectedOptions.includes('tag04') ? 'primary' : 'outline-primary'}
+                          >
+                          Elicitação de requisitos
+                          </ToggleButton>                    
+                          <ToggleButton
+                            className='botoestg'
+                            id='tag32'
+                            name='tag32'
+                            value='tag32'
+                            onClick={() => handleButtonClick('tag32')}
+                            variant={selectedOptions.includes('tag32') ? 'primary' : 'outline-primary'}
+                          >
+                          Redes sociais
+                          </ToggleButton>                    
+                        </div>
+                      </div>
+                      <div className="row">
+                        <div className="col-2">
+                      
+                          <ToggleButton
+                            className='botoestg'
+                            id='tag33'
+                            name='tag33'
+                            value='tag33'
+                            onClick={() => handleButtonClick('tag33')}
+                            variant={selectedOptions.includes('tag33') ? 'primary' : 'outline-primary'}
+                          >
+                          Educacional (provas, laboratórios, práticas de programação em sala de aula)
+                          </ToggleButton>                    
+                          <ToggleButton
+                            className='botoestg'
+                            id='tag34'
+                            name='tag34'
+                            value='tag34'
+                            onClick={() => handleButtonClick('tag34')}
+                            variant={selectedOptions.includes('tag34') ? 'primary' : 'outline-primary'}
+                          >
+                          Projetos usando Software Livre
+                          </ToggleButton>                    
+                          <ToggleButton
+                            className='botoestg'
+                            id='tag35'
+                            name='tag35'
+                            value='tag35'
+                            onClick={() => handleButtonClick('tag35')}
+                            variant={selectedOptions.includes('tag35') ? 'primary' : 'outline-primary'}
+                          >
+                          Projetos de desenvolvimento Web
+                          </ToggleButton>                    
+                          <ToggleButton
+                            className='botoestg'
+                            id='tag36'
+                            name='tag36'
+                            value='tag36'
+                            onClick={() => handleButtonClick('tag36')}
+                            variant={selectedOptions.includes('tag36') ? 'primary' : 'outline-primary'}
+                          >
+                          Utilizaçãode IDE multiplataforma (editor de código, editor de interface gráfica do utilizador, compilador, depurador visual e controlo de versão)
+                          </ToggleButton>
+                        </div>
+                      </div>
+                          
+                  </ToggleButtonGroup>                  
+                </div>                
                 </Carousel.Item>
                 
                 <Carousel.Item>
-                      <label>
-                          <h2>Qual o nível de experiência profissional dos participantes da avaliação de DX?</h2>
-                      </label>
-                      <div className='grupobotoestg'>
+                  <div className='grupobotoestg'>
+                    <div className="row">
+                    <label>
+                    <h2>O que você vai usar na avaliação de DX? </h2>
+                    </label>
+                    
+                          <Button
+                            className='botoestg'
+                            id='tag10'
+                            name='tag10'
+                            value='tag10'
+                            onClick={() => handleButtonClick('tag10')}
+                          >
+                          Questionários com autoavaliações dos participantes
+                          </Button>
+                          <Button
+                            className='botoestg'
+                            id='tag12'
+                            name='tag12'
+                            value='tag12'
+                            onClick={() => handleButtonClick('tag12')}
+                          >
+                          Mineração de dados usando áudios ou gravações
+                          </Button>
+                          <Button
+                            className='botoestg'
+                            id='tag15'
+                            name='tag15'
+                            value='tag15'
+                            onClick={() => handleButtonClick('tag15')}
+                          >
+                          Questionários
+                          </Button>
+                          <Button
+                            className='botoestg'
+                            id='tag16'
+                            name='tag16'
+                            value='tag16'
+                            onClick={() => handleButtonClick('tag16')}
+                          >
+                          Entrevistas
+                          </Button>
+                          <Button
+                            className='botoestg'
+                            id='tag17'
+                            name='tag17'
+                            value='tag17'
+                            onClick={() => handleButtonClick('tag17')}
+                          >
+                          Mineração de dados em bases de texto (emails, sites de perguntas e respostas, fóruns etc)
+                          </Button>
+                        
+                      </div>
+                    <div className="row">
+                    <label>
+                      <h2>Qual o nível de experiência profissional dos participantes da avaliação de DX?</h2>
+                    </label>
+                    
                         <Button
                           className='botoestg'
                           id='tag18'
@@ -310,14 +365,18 @@ function RoboDex() {
                         >
                         Especialista (acima de 5 anos)
                         </Button>
-                      </div>
+                    
+                    </div>
+                  </div>
 
                 </Carousel.Item>
                 <Carousel.Item>
+                      
+                      <div className='grupobotoestg'>
                       <label>
                           <h2>A avaliação de DX vai ser realizada de que forma?</h2>
                       </label>
-                      <div className='grupobotoestg'>
+                      <div className="row"> 
                         <Button
                           className='botoestg'
                           id='tag21'
@@ -346,12 +405,13 @@ function RoboDex() {
                         Híbrida
                         </Button>
                       </div>
-                </Carousel.Item>
-                <Carousel.Item>
+                      </div>
+                      
+                      <div className='grupobotoestg'>
                       <label>
                           <h2>Qual o ambiente da avaliação?</h2>
                       </label>
-                      <div className='grupobotoestg'>
+                      <div className="row"> 
                         <Button
                           className='botoestg'
                           id='tag13'
@@ -370,13 +430,17 @@ function RoboDex() {
                         >
                         Indústria
                         </Button>
+                        </div>
                       </div>
                 </Carousel.Item>
                 <Carousel.Item>
+
+                
                       <label>
                         <h2>Você quer avaliar uma emoção, humor ou sentimento específico?</h2>
                       </label>
                       <div className='grupobotoestg'>
+                      <div className="row">
                         <Button
                           className='botoestg'
                           id='tag26'
@@ -388,12 +452,22 @@ function RoboDex() {
                         </Button>
                         <Button
                           className='botoestg'
+                          id='tag39'
+                          name='tag39'
+                          value='tag39'
+                          onClick={() => handleButtonClick('tag39')}
+                        >
+                        Infelicidade
+                        </Button>
+                        
+                        <Button
+                          className='botoestg'
                           id='tag27'
                           name='tag27'
                           value='tag27'
                           onClick={() => handleButtonClick('tag27')}
                         >
-                        Valência, excitação ou dominância
+                        Dimensões afetivas (Valência, excitação ou dominância)
                         </Button>
                         <Button
                           className='botoestg'
@@ -406,28 +480,40 @@ function RoboDex() {
                         </Button>
                         <Button
                           className='botoestg'
-                          id='tag30'
-                          name='tag30'
-                          value='tag30'
-                          onClick={() => handleButtonClick('tag30')}
+                          id='tag37'
+                          name='tag37'
+                          value='tag37'
+                          onClick={() => handleButtonClick('tag37')}
+                        >
+                        Emoções primárias (tristeza, raiva, alegria, nojo e medo) 
+                        </Button>
+                        <Button
+                          className='botoestg'
+                          id='tag38'
+                          name='tag38'
+                          value='tag38'
+                          onClick={() => handleButtonClick('tag38')}
                         >
                         Tédio, ansiedade, confusão, curiosidade, raiva, excitação, esperança, frustração, interesse, orgulho, surpresa, vergonha, alívio
-                        </Button>
+                        </Button>                        
                       </div>                      
+                    </div>
                 </Carousel.Item>                
               </Carousel>
 
           </Form>
-        </Col>        
+
       </Row>
       <Row>
-        <Col xs={2}>
-          <Button onClick={handleSubmit} className='buttonclick'>ENVIAR</Button>
+        <Col xl={2}>
+            <div className="overlay-image-esquerda">
+            <Button onClick={handleSubmit} className='buttonclick'>ENVIAR</Button>
+          </div>                      
         </Col>
-        <Col xs={10}>
+        <Col xl={10}>
+        <strong>Opções Selecionadas (selecione novamente para remover):</strong>
           {selectedOptions.length > 0 && (
-            <div className="selected-options">
-              <strong>Opções Selecionadas (selecione novamente para remover):</strong>
+            <div className="selected-options">              
               <ul className="horizontal-list">
                 {selectedOptions.map((option, index) => (
                   <li key={index}>{optionDescriptions[option]}</li>                  

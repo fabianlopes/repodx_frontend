@@ -10,7 +10,7 @@ function ListaTecnicas() {
   
   return (    
 
-    <Container fluid className='filtroform'>
+    <Container fluid className='dxinfo-box'>
       <Row>        
         <Cabecalho />
       </Row>

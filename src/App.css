@@ -378,7 +378,13 @@ input[type="radio"] {
   background-color: #ffffff;
   box-shadow: 2px 2px 4px #888;
   color: #110f82;
-}
+
+    width: 200px;
+    white-space: normal; /* Isso permite que o texto seja quebrado conforme necessário */
+    overflow: hidden;
+    text-overflow: ellipsis; /* Isso adiciona reticências (...) para indicar que o texto foi cortado */
+    border-radius: 20px; /* Isso arredondará as bordas dos botões */
+  }
 
 .botoestg:hover {
   background-color: gray;
@@ -558,7 +564,7 @@ input[type="radio"] {
 }
 
 .selected-options ul {
-  list-style-type: none;
+  
   padding: 0;
   margin: 0;
 }
@@ -575,4 +581,9 @@ input[type="radio"] {
 
 .horizontal-list li {
   margin-right: 10px;
+}
+
+.fixed-button {
+  position: absolute;
+  bottom: 0;
 }

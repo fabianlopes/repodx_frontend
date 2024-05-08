@@ -33,7 +33,7 @@ function Assistente() {
 
   return (
 
-    <Container fluid className='filtroform'>
+    <Container fluid className='dxinfo-box'>
       <Row>
           <Cabecalho />          
       </Row>
@@ -41,7 +41,7 @@ function Assistente() {
         <h2>Filtro de técnicas - selecione as opções para filtrar</h2>
         <BotaoVoltar to='/' text='Voltar'/>
       </Row>
-      <Row className='w-80 filtroform'>
+      <Row className='w-80 dxinfo-box'>
         <Col xs='8'>
           <Form>            
               <div className="form-check shadow bg-light border-primary">

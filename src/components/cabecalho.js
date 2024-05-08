@@ -21,8 +21,7 @@ function Cabecalho() {
                         <Navbar.Collapse id="basic-navbar-nav"></Navbar.Collapse>
                         <Nav className="ml-auto">
                             <Nav.Link href="/">Home</Nav.Link>
-                            <Nav.Link href="/listatecnicas">Técnicas</Nav.Link>                            
-                            <Nav.Link href="/assistente">Filtro de técnicas</Nav.Link>
+                            <Nav.Link href="/listatecnicas">Técnicas</Nav.Link>                                                        
                             <Nav.Link href="/robodex">Assistente virtual</Nav.Link>
                             <Nav.Link href="/dxinfo">Sobre a DX</Nav.Link>
                         </Nav>

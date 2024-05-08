@@ -3,19 +3,19 @@ import { Container, Row, Carousel } from 'react-bootstrap';
 import Cabecalho from '../components/cabecalho';
 import BotaoVoltar from '../components/botaovoltar';
 
-const slides = require.context('../imagens/slides', false, /\.(png|JPG|jpe?g|svg)$/);
+const slides = require.context('../imagens/slidesDX', false, /\.(png|JPG|jpe?g|svg)$/);
 
 function DX() {  
     
   
   return (
 
-    <Container fluid className='home'>
+    <Container fluid className='dxinfo-box'>
       <Row>
           <Cabecalho />
       </Row>
       <Row className='justify-content-center' >
-        <h2>Informações sobre DX - utilize os botões abaixo da imagem para navegar nos slides</h2>
+        <h2>Informações sobre DX - utilize os botões laterias da imagem para navegar nos slides</h2>
         <BotaoVoltar to='/' text='Voltar'/>
       </Row>
       <Row className="d-flex justify-content-center align-items-center vh-90">
@@ -23,8 +23,8 @@ function DX() {
         <Carousel interval={300000}            
             variant="dark"
             className="d-block vh-50"
-            controls={false}
-            slide={false}
+            controls={true}
+            slide={true}
             defaultActiveIndex={0}
           >
               {slides.keys().map((slide) => (
