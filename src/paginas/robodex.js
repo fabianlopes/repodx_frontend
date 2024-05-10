@@ -79,7 +79,7 @@ function RoboDex() {
               slide={false}
               >
                 <Carousel.Item>     
-                  <div className="inicio">
+                  <div >
                       <h2>O que precisamos saber</h2>
                       Aqui precisamos saber informações para poder auxiliar melhor na seleção da técnica de avaliação de DX na aréa afetiva
                       <p>Não lembra o que é DX? clique <Link to='/dxinfo'>AQUI</Link></p>
