@@ -64,7 +64,8 @@ function RoboDex() {
           <h2>Assistente de recomendação - Responda as questões e use o botão ENVIAR para obter as sugestões de técnicas</h2>
         </Col>
         <Col xs={2}>
-          <BotaoVoltar to='/' text='Voltar'/>
+          <Button onClick={handleSubmit} className='botaovoltar'>ENVIAR</Button>
+          <BotaoVoltar to='/' text='Voltar'/>          
         </Col>        
       </Row>
       <Row>
@@ -77,17 +78,31 @@ function RoboDex() {
               variant="dark"
               className="d-block vh-50"
               slide={false}
+              controls={false} // Remova as setas laterais padrão do Carousel
               >
                 <Carousel.Item>     
-                  <div >
+                  <div className="inicio">
                       <h2>O que precisamos saber</h2>
-                      Aqui precisamos saber informações para poder auxiliar melhor na seleção da técnica de avaliação de DX na aréa afetiva
-                      <p>Não lembra o que é DX? clique <Link to='/dxinfo'>AQUI</Link></p>
+                      Aqui precisamos saber informações para poder auxiliar melhor na seleção da técnica de avaliação de DX na aréa afetiva 
+                      <p>Não lembra o que é DX? clique <Link to='/dxinfo'>AQUI</Link></p>                      
+                  </div>
+                  <div className="controls">                       
+                       <button type="button" onClick={() => setActiveIndex(1)}>Próximo</button>
+                  </div>
+                </Carousel.Item>
+                <Carousel.Item>
+                  <div className="inicio">
                       <h2>O que você precisa saber</h2>
-                      Utilize os botões laterias para navegação
-                      Escolha apenas a opção mais adequada ao seu contexto
+                      Utilize os botões para navegação
+                      <p>Escolha apenas a opção mais adequada ao seu contexto</p>
+                      Clique no botão ENVIAR
                       <p>Ao enviar suas respostas, uma nova tela com a lista de sugestões será apresentada</p>
                   </div>
+                  <div className="controls">
+                       <button type="button" onClick={() => setActiveIndex(0)}>Anterior</button>
+                       <button type="button" onClick={() => setActiveIndex(2)}>Próximo</button>
+                  </div>
+
                 </Carousel.Item>
 
                 <Carousel.Item>
@@ -119,6 +134,10 @@ function RoboDex() {
                             </ToggleButton>
                         </ToggleButtonGroup>                        
                       </div>
+                  </div>
+                  <div className="controls">
+                       <button type="button" onClick={() => setActiveIndex(1)}>Anterior</button>
+                       <button type="button" onClick={() => setActiveIndex(3)}>Próximo</button>
                   </div>
                 </Carousel.Item>
 
@@ -161,6 +180,10 @@ function RoboDex() {
                             </ToggleButton>                            
                           </ToggleButtonGroup>
                       </div> 
+                  </div>
+                  <div className="controls">
+                       <button type="button" onClick={() => setActiveIndex(2)}>Anterior</button>
+                       <button type="button" onClick={() => setActiveIndex(4)}>Próximo</button>
                   </div>
                 </Carousel.Item>
 
@@ -217,6 +240,10 @@ function RoboDex() {
 
                     </ToggleButtonGroup>  
                   </div>
+                  <div className="controls">
+                       <button type="button" onClick={() => setActiveIndex(3)}>Anterior</button>
+                       <button type="button" onClick={() => setActiveIndex(5)}>Próximo</button>
+                  </div>
                 </Carousel.Item>
 
                 <Carousel.Item>
@@ -270,6 +297,10 @@ function RoboDex() {
                           </ToggleButton>
                     </ToggleButtonGroup>
                   </div>
+                  <div className="controls">
+                       <button type="button" onClick={() => setActiveIndex(4)}>Anterior</button>
+                       <button type="button" onClick={() => setActiveIndex(6)}>Próximo</button>
+                  </div>
                 </Carousel.Item>
 
                 <Carousel.Item>
@@ -300,6 +331,10 @@ function RoboDex() {
                           Influência e impacto dos estados afetivos (qualidade, produtividade, desempenho, performance)
                           </ToggleButton>                    
                     </ToggleButtonGroup>    
+                  </div>
+                  <div className="controls">
+                       <button type="button" onClick={() => setActiveIndex(5)}>Anterior</button>
+                       <button type="button" onClick={() => setActiveIndex(7)}>Próximo</button>
                   </div>
                 </Carousel.Item>
 
@@ -367,6 +402,10 @@ function RoboDex() {
 
                     </ToggleButtonGroup>
                   </div>
+                  <div className="controls">
+                       <button type="button" onClick={() => setActiveIndex(6)}>Anterior</button>
+                       <button type="button" onClick={() => setActiveIndex(8)}>Próximo</button>
+                  </div>
                 </Carousel.Item>
 
                 <Carousel.Item>
@@ -410,6 +449,10 @@ function RoboDex() {
                           </ToggleButton>                    
 
                       </ToggleButtonGroup>
+                  </div>
+                  <div className="controls">
+                       <button type="button" onClick={() => setActiveIndex(7)}>Anterior</button>
+                       <button type="button" onClick={() => setActiveIndex(9)}>Próximo</button>
                   </div>
                 </Carousel.Item>
 
@@ -455,7 +498,11 @@ function RoboDex() {
 
                       </ToggleButtonGroup>
 
-                  </div>                      
+                  </div>
+                  <div className="controls">
+                       <button type="button" onClick={() => setActiveIndex(8)}>Anterior</button>
+                       <button type="button" onClick={() => setActiveIndex(10)}>Próximo</button>
+                  </div>
                 </Carousel.Item>
 
                 <Carousel.Item>                      
@@ -533,6 +580,9 @@ function RoboDex() {
                         
                       </ToggleButtonGroup>
                     </div>
+                    <div className="controls">
+                       <button type="button" onClick={() => setActiveIndex(9)}>Anterior</button>                       
+                  </div>
                 </Carousel.Item>                
               </Carousel>
 
@@ -540,23 +590,19 @@ function RoboDex() {
 
       </Row>
       <Row>
-        <Col xl={2}>
-            <div className="overlay-image-esquerda">
-            <Button onClick={handleSubmit} className='buttonclick'>ENVIAR</Button>
-          </div>                      
-        </Col>
-        <Col xl={10}>
+        
         <strong>Opções Selecionadas (selecione novamente para remover):</strong>
           {selectedOptions.length > 0 && (
-            <div className="selected-options">              
-              <ul className="horizontal-list">
+            <div className="selected-options">
+              
+              <ul className="button-list">              
                 {selectedOptions.map((option, index) => (
-                  <li key={index}>{optionDescriptions[option]}</li>                  
+                  <li key={index}><button>{optionDescriptions[option]}</button></li>                  
                 ))}
-              </ul>
+              </ul>              
             </div>
           )}
-        </Col>
+        
       </Row>
 
       <Modal show={showModal} onHide={handleClose}>
