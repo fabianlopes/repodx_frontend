@@ -15,7 +15,7 @@ function Home() {
       </Row>      
       <Row className="d-flex justify-content-center align-items-center vh-90">
         
-        <Carousel interval={3000}            
+        <Carousel interval={10000}            
             variant="dark"
             className="d-block vh-50"
             controls={true}
