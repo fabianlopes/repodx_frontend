@@ -472,10 +472,10 @@ input[type="radio"] {
 }
 
 .buttonclick {
-  position: absolute;
-  left: 10%;
-  top: 70%;
-  transform: translateX(-50%) translateY(-50%);
+  position: relative;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%) translateY(-1%);
   display: flex;
   justify-content: center;
   line-height: 30px;
@@ -599,4 +599,49 @@ input[type="radio"] {
   background-color: #f0f0f0;
   border: 1px solid #ccc;
   border-radius: 15px;
+}
+/*
+.controls {
+  background-color: #110f82;
+  font-size: large;
+  color: #ffffff;
+  position: absolute;
+  z-index: 1;
+  width: 175px;
+  height: 40px;
+}*/
+
+.controls {  
+  display: flex;
+  justify-content: space-between;
+}
+
+.controls .prev,
+.controls .next {
+  background-color: #110f82;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+}
+
+.primeiro {
+  background-color: #110f82;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  margin-left: auto;
+}
+
+.controls .prev {
+  margin-left: 10px;
+}
+
+.controls .next {
+  margin-right: 10px;
+}
+
+.controls button:hover {
+  cursor: pointer;
 }

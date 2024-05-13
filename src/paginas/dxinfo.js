@@ -1,7 +1,6 @@
 import React from 'react';
 import { Container, Row, Carousel } from 'react-bootstrap';
 import Cabecalho from '../components/cabecalho';
-import BotaoVoltar from '../components/botaovoltar';
 
 const slides = require.context('../imagens/slidesDX', false, /\.(png|JPG|jpe?g|svg)$/);
 
@@ -15,8 +14,7 @@ function DX() {
           <Cabecalho />
       </Row>
       <Row className='justify-content-center' >
-        <h2>Informações sobre DX - utilize os botões laterias da imagem para navegar nos slides</h2>
-        <BotaoVoltar to='/' text='Voltar'/>
+        <h3>Informações sobre DX - utilize os botões laterias da imagem para navegar nos slides</h3>        
       </Row>
       <Row className="d-flex justify-content-center align-items-center vh-90">
         
@@ -25,7 +23,7 @@ function DX() {
             className="d-block vh-50"
             controls={true}
             slide={true}
-            defaultActiveIndex={0}
+            defaultActiveIndex={2}
           >
               {slides.keys().map((slide) => (
               <Carousel.Item key={slide}>                           

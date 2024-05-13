@@ -17,14 +17,8 @@ function Tecnica() {
         <Row>        
             <Cabecalho/>
         </Row>
-        <Row>
-            <Col xs={10}>
-                <h1>{tecnica[0].ID} - {tecnica[0].nome}</h1>
-            </Col>
-            <Col xs={2}>
-                <BotaoVoltar to='/listatecnicas' text='Voltar'/>
-            </Col>
-            
+        <Row>           
+                <h1>{tecnica[0].ID} - {tecnica[0].nome}</h1>            
         </Row>
         <Row className='filtroform'>
             
