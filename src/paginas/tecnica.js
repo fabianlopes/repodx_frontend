@@ -4,18 +4,25 @@ import Cabecalho from '../components/cabecalho';
 import { useParams } from 'react-router-dom';
 import tedax from '../data/TEDXA.json';
 import ZoomableImage from '../components/zoomimagem';
-import BotaoVoltar from '../components/botaovoltar';
+import PDFViewer from '../components/pdfviewer';
 
 function Tecnica() {
 
   const { id } = useParams();
   const tecnica = tedax.filter(Item => Item.ID === id);  
-  const [currentTecnica] = tedax.filter(Item => Item.ID === id);
+  const [currentTecnica] = tedax.filter(Item => Item.ID === id);  
+  const pdfUrl = '../imagens/repoDXpdf/tedxa01.pdf';
+  
+  console.log(pdfUrl);
   
   return (
     <Container fluid className='filtroform'>        
         <Row>        
             <Cabecalho/>
+            <div>
+                <h1>Visualizador de PDF</h1>
+                <PDFViewer pdfUrl={pdfUrl} />
+            </div>
         </Row>
         <Row>           
                 <h1>{tecnica[0].ID} - {tecnica[0].nome}</h1>            
