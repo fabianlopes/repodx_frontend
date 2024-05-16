@@ -645,3 +645,8 @@ input[type="radio"] {
 .controls button:hover {
   cursor: pointer;
 }
+
+.modal-custom {
+  max-width: 60%;
+  margin: auto;
+}
