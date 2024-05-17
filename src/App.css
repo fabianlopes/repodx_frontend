@@ -600,3 +600,13 @@ input[type="radio"] {
   border: 1px solid #ccc;
   border-radius: 15px;
 }
+
+.controls button {
+  background-color: #110f82;
+  font-size: large;
+  color: #ffffff;
+  position: relative;
+  z-index: 1;
+  width: 175px;
+  height: 40px;
+}
